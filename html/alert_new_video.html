@@ -15,6 +15,7 @@
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/perfectscrool/perfect-scrollbar.css">
   	<!-- ================== END BASE CSS STYLE ================== -->
 
     <style type="text/css">
@@ -31,77 +32,143 @@
 
   <body style="background-color: rgba(0,0,0,0.5);">
     
-    <div style="background-color: #fff; width: 400px; position: absolute; left: 50%; margin-left: -200px">
+    <div style="background-color: #fff; width: 400px; position: absolute; left: 50%; margin-left: -200px; max-height:610px; top:50%; margin-top:-305px">
       
+      <!-- 顶部 -->
       <div class="clearfix">
         <div style=" width: 200px; height: 48px; float: left; line-height: 48px; text-align: center; color: #81b84a ">
           <img src="" style="width: 18px; height: 18px;margin-top: -2px;margin-right: 5px; display: inline-flex">
           <span>未分组视频</span>
         </div>
-        <div style=" width: 200px; height: 48px; float: left; line-height: 48px; text-align: center; color: #81b84a ">
+        <div style=" width: 200px; height: 48px; float: left; line-height: 48px; text-align: center; color: #81b84a; border-left:1px solid #e3e3e3 ">
           <img src="" style="width: 18px; height: 18px;margin-top: -2px;margin-right: 5px; display: inline-flex">
           <span>未选择语言</span>
         </div>
       </div>
-
-      <div style="height: 225px; width: 100px; position:relative">
-        <img style="width:400px; height:225px " class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="">
-        <div style="position: absolute; bottom: 0; width: 400px; height: 48px; line-height: 48px; color: #fff; font-size: 18px; padding: 0 10px; background-color: rgba(126,180,72,0.3)">
-          <p>纪录的地平线</p>
-        </div>
-      </div>
-
-      <div style="padding:20px 30px 0 30px; position: relative">
-        <input style="outline: none; border: 1px solid #e3e3e3; height:36px; line-height: 36px; width: 340px; border-radius: 4px; padding-left: 42px; padding-right: 12px">
-        <img src="" style="width: 18px; height:18px; position: absolute; top: 29px; left: 42px;">
-      </div>
-
-      <div style="padding:28px 30px 0 30px; position: relative">
-        <div class="clearfix" style="color: #81b84a; font-size: 12px">
-          <div style="width: 170px;float: left">项目成员</div>
-          <div style="width: 50px;float: left">清空</div>
-          <div style="width: 70px;float: left">复制成员</div>
-          <div style="width: 50px;float: left">粘贴成员</div>
-        </div>
-        <ul>
-          <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
-            <p style="width: 170px; float: left; font-size: 14px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
-              <span>小花</span>
-            </p>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">爬词</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">翻译</div>
-            <div style="width: 25px; float: left; margin-left: 15px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+	  <!-- 顶部 -->
+      
+      <!-- 中间区域 -->
+      <div style="max-height:512px; overflow:hidden; position:relative" id="main_subtitle">
+          <div style="height: 225px; width: 100px; position:relative">
+            <img style="width:400px; height:225px " class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="">
+            <div style="position: absolute; bottom: 0; width: 400px; height: 48px; line-height: 48px; color: #fff; font-size: 18px; padding: 0 10px; background-color: rgba(126,180,72,0.3)">
+              <p>纪录的地平线</p>
             </div>
-          </li>
-          <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
-            <p style="width: 170px; float: left; font-size: 14px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
-              <span>小花</span>
-            </p>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">管理</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">翻译</div>
-            <div style="width: 25px; float: left; margin-left: 15px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+          </div>
+    
+          <div style="padding:20px 30px 0 30px; position: relative">
+            <input style="outline: none; border: 1px solid #e3e3e3; height:36px; line-height: 36px; width: 340px; border-radius: 4px; padding-left: 42px; padding-right: 12px">
+            <img src="" style="width: 18px; height:18px; position: absolute; top: 29px; left: 42px;">
+          </div>
+    
+          <div style="padding:28px 30px 0 30px; position: relative">
+            <div class="clearfix" style="color: #81b84a; font-size: 12px">
+              <div style="width: 170px;float: left">项目成员</div>
+              <div style="width: 50px;float: left">清空</div>
+              <div style="width: 70px;float: left">复制成员</div>
+              <div style="width: 50px;float: left">粘贴成员</div>
             </div>
-          </li>
-          <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
-            <p style="width: 170px; float: left; font-size: 14px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
-              <span>小花</span>
-            </p>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
-            <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
-            <div style="width: 25px; float: left; margin-left: 15px">
-              <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
-            </div>
-          </li>
-        </ul>
+            <ul>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+              <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
+                <p style="width: 170px; float: left; font-size: 14px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                  <span>小花</span>
+                </p>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">管理</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer">爬词</div>
+                <div style="width: 40px; float: left; margin-left: 3px; text-align: center; line-height: 25px; cursor: pointer;background-color: #b2ce8e; color: #fff; border-radius: 4px">翻译</div>
+                <div style="width: 25px; float: left; margin-left: 15px">
+                  <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
+                </div>
+              </li>
+            </ul>
+          </div>
       </div>
+      <!-- 中间区域 -->
 
       <div style="width: 400px; height: 50px; border-top: 1px solid #e3e3e3; font-size: 14px; padding:0 30px; color: #81b84a" class="clearfix">
         <p style="height:49px; line-height: 49px; float: right; cursor: pointer">确定</p>
@@ -120,6 +187,9 @@
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/respond/respond.js"></script>
   
+  <script src="../js/perfectscrool/jquery.mousewheel.js"></script>
+  <script src="../js/perfectscrool/perfect-scrollbar.js"></script>
+  
   <script>
     $(document).ready(function(){
 
@@ -130,6 +200,7 @@
         threshold : 100 
       });
       
+	  $('#main_subtitle').perfectScrollbar();//滚动样式
       
     });
 
