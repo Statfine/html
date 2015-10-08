@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js" style="height: 100%"> <!--<![endif]-->
+  
+  <head>
+  	<meta charset="utf-8">
+    <meta name="Description" content="description">
+    <title>title</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+      
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+  	<!-- ================== END BASE CSS STYLE ================== -->
+
+    <style type="text/css">
+
+      .yimu_header {width: 100%; height: 48px; background-color: #606758}
+      .yimu_header .update_video { float: right; height: 49px; border-bottom: 1px #e3e3e3 solid}
+      .yimu_header .update_video input {width:320px;outline: none; border: none; height: 48px; line-height: 48px; font-size: 12px; background-color: #363b31; color: #fff; padding: 0 10px}
+      .yimu_header .update_video .img_btn {float: right;cursor: pointer; width: 80px; height: 48px}
+      .yimu_header .update_video .img_btn img {  width: 18px; height: 18px;margin-top: 15px; margin-left: 30px}
+
+      .yimu_content {height: 100%; position: relative;}
+
+      .yimu_content .left_project {width: 280px; height: 100%;position: absolute; top: 0; background-color: #fff; border-right: 1px #e3e3e3 solid}
+
+      .yimu_content .left_project .all_video {height: 48px; padding:0 20px 0 17px; font-size: 14px}  
+      .yimu_content .left_project .all_video .left_p {float: left; height:48px; line-height: 48px}
+      .yimu_content .left_project .all_video .right_p {float: right; height:48px; line-height: 48px}
+      .yimu_content .left_project .project_list { margin: 10px 0}
+      .yimu_content .left_project .project_list li {height: 48px; padding:0 20px 0 17px; font-size: 14px; cursor: pointer;}
+      .yimu_content .left_project .project_list li .project_name {float: left; height:48px; line-height: 48px}
+      .yimu_content .left_project .project_list li .project_video_sum {float: right; height:48px; line-height: 48px}
+      .yimu_content .left_project .project_list .choose { background-color: #b2ce8e}
+      .yimu_content .left_project .project_list .choose p { color: #fff}
+      .yimu_content .left_project .creat_new_project {height: 50px; padding:0 20px 0 17px; font-size: 14px; border-top: 1px #e3e3e3 solid; border-bottom: 1px #e3e3e3 solid; cursor: pointer;}
+      .yimu_content .left_project .creat_new_project img { width: 18px; height: 18px; float: left; margin-top: 15px}
+      .yimu_content .left_project .creat_new_project p { float: left; height: 48px; line-height: 48px; margin-left: 10px; color: #81b84a}
+
+      .yimu_content .right_project {width: 100%; height: 100%;padding-left: 280px;}
+      .yimu_content .right_project .data_content .project_top {margin: 35px 0;padding: 0 39px;}
+      .yimu_content .right_project .data_content .project_top .left_p {float: left} 
+      .yimu_content .right_project .data_content .project_top .left_p p {float: left; height:35px; line-height: 35px}
+      .yimu_content .right_project .data_content .project_top .left_p .project_name {font-size: 24px}
+      .yimu_content .right_project .data_content .project_top .left_p .project_avtion_show {float: left; display: none}
+      .yimu_content .right_project .data_content .project_top .left_p .video_delete {margin-left: 40px; color: #73b120}
+      .yimu_content .right_project .data_content .project_top .left_p .video_move {margin-left: 38px; color: #73b120}
+      .yimu_content .right_project .data_content .project_top .left_p .video_move .point {display: inline-block;width: 0;height: 0;margin-left: 2px;vertical-align: middle;border-top: 4px solid;border-right: 4px solid transparent;border-left: 4px solid transparent;}
+      .yimu_content .right_project .data_content .project_top .right_do {float: right}
+      .yimu_content .right_project .data_content .project_top .right_do .search_input {margin-right: 20px; width:260px; height:35px; line-height: 35px; padding:0 25px 0 5px; border: 1px #e3e3e3 solid; outline: none; font-size: 14px}
+      .yimu_content .right_project .data_content .project_top .right_do .edit_project_btn {background-color: #fff; border: 1px #e3e3e3 solid; width:102px; height:35px; line-height: 35px; color: #73b120; font-size: 12px; border-radius: 4px; cursor: pointer;}
+      .yimu_content .right_project .data_content .project_top .right_do .edit_project_btn img {width:18px; height:18px; margin-top: -2px; margin-right: 10px; display: inline-flex }
+
+
+      .yimu_content .right_project .data_content .doing_project {padding: 0 29px;}
+      .yimu_content .right_project .data_content .doing_project .sum_ {color: #999; margin-left: 10px; background-color: #606758; padding: 0 8px; font-size: 12px; display: inline-block; height: 30px; line-height: 30px; color: #fff}
+      .yimu_content .right_project .data_content .doing_project .sum_ img{width:18px; height:18px; margin-right: 8px; margin-top: -2px}
+      .yimu_content .right_project .data_content .doing_project .doing_list {margin-top: 10px}
+      .yimu_content .right_project .data_content .doing_project .doing_list li {float: left; margin-bottom: 20px}
+      
+      .language_action {float: right; position: relative; cursor: pointer; width: 60px;}
+      .language_action .language {display: block; text-align: right;}
+      .language_action .action {background-color: #71af20; width: 60px; height: 24px; border: none; display: none; border-radius: 4px; outline: none}
+      .language_action:hover .language {display: none;}
+      .language_action:hover .action { display: block}
+
+
+    </style>
+    
+  </head>
+
+
+
+  <body>
+
+    <!-- 顶部区域 -->
+    <div class="yimu_header clearfix">
+
+      <div class="update_video clearfix">
+            <input class="" placeholder="在这里输入视频链接或者上传视频" style="float:left" >
+            <div class="img_btn">
+              <img src="">
+            </div>
+      </div>
+
+    </div>
+    <!-- 顶部区域 -->
+
+    <!-- 内容区域 -->
+    <div class="yimu_content clearfix">
+      
+      <!-- 左边区域 -->
+      <div class="left_project">
+        
+        <div class="all_video clearfix">
+          <p class="left_p">全部视频</p>
+          <p class="right_p">999</p>
+        </div>
+        <ul class="project_list">
+            <li>
+              <p class="project_name">未分组视频</p>
+              <p class="project_video_sum">5</p>
+            </li>
+            <li class="choose">
+              <p class="project_name">火影忍者</p>
+              <p class="project_video_sum">12</p>
+            </li>
+            <li>
+              <p class="project_name">一拳超人</p>
+              <p class="project_video_sum">15</p>
+            </li>
+            <li>
+              <p class="project_name">纪录地平线</p>
+              <p class="project_video_sum">30</p>
+            </li>
+        </ul> 
+
+        <div class="creat_new_project clearfix">
+          <img src="">
+          <p>新建项目组</p>
+        </div>
+
+      </div>
+      <!-- 左边区域 -->
+
+      <!-- 右边边区域 -->
+      <div class="right_project">
+      
+        <div class="data_content">
+
+          <div class="project_top clearfix">
+            <div class="left_p clearfix">
+              <p class="project_name" id="left_project_name">火影忍者</p>
+              <div class="project_avtion_show" id="left_project_num_action">
+                <p >已选中&nbsp<span>N</span>&nbsp个项目</p> 
+                <p class="video_delete">删除</p>
+                <p class="video_move">移动到
+                  <span class="point"></span>
+                </p>
+              </div>
+            </div>
+            <div class="right_do">
+              <input class="search_input" placeholder="搜索">
+              <button class="edit_project_btn">
+                <img src="">编辑项目
+                </button>
+            </div>
+          </div>
+
+          <!-- 进行中项目 -->
+          <div class="doing_project">
+            <span class="sum_">
+              <img src="">
+              <span id="video_choose_sum">n</span>
+              <span>个进行中项目</span>
+            </span>
+            <ul class="doing_list clearfix">
+
+              <li>
+                <div style="float:left;  width: 10px; height: 240px"></div>
+                <div style="float:left; width:260px; height: 240px; background-color: #fff; position: relative">
+                  <img style="width:260px; height:140px" class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="" alt="Cover" title="">
+                  <input class="video_checkbox" name="video[]" type="checkbox" style="position: absolute; right: 10px; top: 5px">
+                  <div style="padding:16px 10px 12px 10px">
+                    <p style="font-size: 20px; color: #000">火影忍者</p>
+                    <div style="position: absolute; bottom: 8px; width: 240px;height:24px; line-height: 24px" class="clearfix">
+                      <p style="float: left">来自：乐视网</p>
+                      <div class="language_action">
+                        <p class="language">日语</p>
+                        <button class="action"><img src="" style="width:18px; height:18px"></button>
+                        <div class="do_video_action" style=" width: 300px; height: 96px; background-color: #fff; border: 1px #e3e3e3 solid; position: absolute; top: -110px; left: -120px; border-radius: 4px; display: none;z-index: 99;">
+                          <p style="height: 48px; line-height: 48px; text-align: center; border-bottom: 1px solid #e3e3e3; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">编辑项目</p>
+                          <p style="height: 48px; line-height: 48px; text-align: center; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">删除视频</p>
+                          <span style="display: inline-block;width: 0;height: 0;margin-left: 140px; margin-top: -20px;vertical-align: middle;border-top: 10px solid;border-right: 10px solid transparent;border-left: 10px solid transparent;"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="float:left; width: 10px; height: 240px"></div>
+              </li>  
+
+              <li>
+                <div style="float:left;  width: 10px; height: 240px"></div>
+                <div style="float:left; width:260px; height: 240px; background-color: #fff; position: relative">
+                  <img style="width:260px; height:140px" class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="" alt="Cover" title="">
+                  <input class="video_checkbox" name="video[]" type="checkbox" style="position: absolute; right: 10px; top: 5px">
+                  <div style="padding:16px 10px 12px 10px">
+                    <p style="font-size: 20px; color: #000">火影忍者</p>
+                    <div style="position: absolute; bottom: 8px; width: 240px;height:24px; line-height: 24px" class="clearfix">
+                      <p style="float: left">来自：乐视网</p>
+                      <div class="language_action">
+                        <p class="language">日语</p>
+                        <button class="action"><img src="" style="width:18px; height:18px"></button>
+                        <div class="do_video_action" style=" width: 300px; height: 96px; background-color: #fff; border: 1px #e3e3e3 solid; position: absolute; top: -110px; left: -120px; border-radius: 4px; display: none;z-index: 99;">
+                          <p style="height: 48px; line-height: 48px; text-align: center; border-bottom: 1px solid #e3e3e3; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">编辑项目</p>
+                          <p style="height: 48px; line-height: 48px; text-align: center; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">删除视频</p>
+                          <span style="display: inline-block;width: 0;height: 0;margin-left: 140px; margin-top: -20px;vertical-align: middle;border-top: 10px solid;border-right: 10px solid transparent;border-left: 10px solid transparent;"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="float:left; width: 10px; height: 240px"></div>
+              </li> 
+              
+              <li>
+                <div style="float:left;  width: 10px; height: 240px"></div>
+                <div style="float:left; width:260px; height: 240px; background-color: #fff; position: relative">
+                  <img style="width:260px; height:140px" class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="" alt="Cover" title="">
+                  <input class="video_checkbox" name="video[]" type="checkbox" style="position: absolute; right: 10px; top: 5px">
+                  <div style="padding:16px 10px 12px 10px">
+                    <p style="font-size: 20px; color: #000">火影忍者</p>
+                    <div style="position: absolute; bottom: 8px; width: 240px;height:24px; line-height: 24px" class="clearfix">
+                      <p style="float: left">来自：乐视网</p>
+                      <div class="language_action">
+                        <p class="language">日语</p>
+                        <button class="action"><img src="" style="width:18px; height:18px"></button>
+                        <div class="do_video_action" style=" width: 300px; height: 96px; background-color: #fff; border: 1px #e3e3e3 solid; position: absolute; top: -110px; left: -120px; border-radius: 4px; display: none;z-index: 99;">
+                          <p style="height: 48px; line-height: 48px; text-align: center; border-bottom: 1px solid #e3e3e3; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">编辑项目</p>
+                          <p style="height: 48px; line-height: 48px; text-align: center; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">删除视频</p>
+                          <span style="display: inline-block;width: 0;height: 0;margin-left: 140px; margin-top: -20px;vertical-align: middle;border-top: 10px solid;border-right: 10px solid transparent;border-left: 10px solid transparent;"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="float:left; width: 10px; height: 240px"></div>
+              </li>
+              <li>
+                <div style="float:left;  width: 10px; height: 240px"></div>
+                <div style="float:left; width:260px; height: 240px; background-color: #fff; position: relative">
+                  <img style="width:260px; height:140px" class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="" alt="Cover" title="">
+                  <input class="video_checkbox" name="video[]" type="checkbox" style="position: absolute; right: 10px; top: 5px">
+                  <div style="padding:16px 10px 12px 10px">
+                    <p style="font-size: 20px; color: #000">火影忍者</p>
+                    <div style="position: absolute; bottom: 8px; width: 240px;height:24px; line-height: 24px" class="clearfix">
+                      <p style="float: left">来自：乐视网</p>
+                      <div class="language_action">
+                        <p class="language">日语</p>
+                        <button class="action"><img src="" style="width:18px; height:18px"></button>
+                        <div class="do_video_action" style=" width: 300px; height: 96px; background-color: #fff; border: 1px #e3e3e3 solid; position: absolute; top: -110px; left: -120px; border-radius: 4px; display: none;z-index: 99;">
+                          <p style="height: 48px; line-height: 48px; text-align: center; border-bottom: 1px solid #e3e3e3; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">编辑项目</p>
+                          <p style="height: 48px; line-height: 48px; text-align: center; color: #81b84a"><img src="" style="width: 18px; height:18px;display: inline-flex; margin-right: 8px; cursor: pointer">删除视频</p>
+                          <span style="display: inline-block;width: 0;height: 0;margin-left: 140px; margin-top: -20px;vertical-align: middle;border-top: 10px solid;border-right: 10px solid transparent;border-left: 10px solid transparent;"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="float:left; width: 10px; height: 240px"></div>
+              </li> 
+
+
+
+            </ul>
+          </div>
+          <!-- 进行中项目 -->
+
+          <!-- 完成项目 -->
+          <!-- 完成项目 -->
+
+        </div>
+        
+      </div>
+      <!-- 右边区域 -->
+
+    </div>
+  	<!-- 内容区域 -->
+      
+  </body>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.5/jquery.lazyload.min.js"></script>
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/respond/respond.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+
+      //图片插件
+      $("img.lazy").lazyload({
+        effect: "fadeIn",
+        skip_invisible : false,
+        threshold : 100 
+      });
+      
+      $(".doing_list").delegate(".action","click",function(){   
+         $(this).parent().find(".do_video_action").show();
+      });
+
+      $(".doing_list").delegate(".video_checkbox","click",function(){   
+         if(vidwoChooseSum() > 0){
+            $("#left_project_name").hide();
+            $("#left_project_num_action").show();
+            $("#video_choose_sum").text(vidwoChooseSum());
+         }else{
+            $("#left_project_name").show();
+            $("#left_project_num_action").hide();
+         }
+      });
+
+    });
+
+    function vidwoChooseSum(){
+      var checks = document.getElementsByName("video[]");
+      n = 0;
+      for(i=0;i<checks.length;i++){
+        if(checks[i].checked)
+          n++;
+      }
+      return n;
+    }
+
+  </script>
+
+</html>
+
+
