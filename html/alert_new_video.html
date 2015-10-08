@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="no-js" style="height: 100%"> <!--<![endif]-->
+<html lang="zh-CN" class="no-js"> <!--<![endif]-->
   
   <head>
   	<meta charset="utf-8">
@@ -47,7 +47,7 @@
 	  <!-- 顶部 -->
       
       <!-- 中间区域 -->
-      <div style="max-height:512px; overflow:hidden; position:relative" id="main_subtitle">
+      <div style="height:512px; overflow:hidden; position:relative" id="main_subtitle">
           <div style="height: 225px; width: 100px; position:relative">
             <img style="width:400px; height:225px " class="lazy" data-original="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" src="https://dn-hiho.qbox.me/videopic/201412/20Dec2014153139.jpg?imageView2/1/w/230/h/119/q/100" data-no-retina="">
             <div style="position: absolute; bottom: 0; width: 400px; height: 48px; line-height: 48px; color: #fff; font-size: 18px; padding: 0 10px; background-color: rgba(126,180,72,0.3)">
@@ -81,7 +81,7 @@
                   <img class="delete_person" src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px; cursor:pointer" title="移除">
                 </div>
               </li>
-              
+              <!--
               <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
                 <p style="width: 170px; float: left; font-size: 14px">
                   <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
@@ -106,6 +106,7 @@
                   <img class="delete_person" src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px; cursor:pointer" title="移除">
                 </div>
               </li>
+              
               <li style="margin-top: 10px; margin-bottom: 3px; font-size: 12px; height:25px; line-height: 25px" class="clearfix">
                 <p style="width: 170px; float: left; font-size: 14px">
                   <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px">
@@ -166,6 +167,7 @@
                   <img class="delete_person" src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 5px; cursor:pointer" title="移除">
                 </div>
               </li>
+              -->
             </ul>
           </div>
           
@@ -201,6 +203,8 @@
   
   <script src="../js/perfectscrool/jquery.mousewheel.js"></script>
   <script src="../js/perfectscrool/perfect-scrollbar.js"></script>
+  <script src="../js/layer/layer.js"></script>
+  
   
   <script>
     $(document).ready(function(){
@@ -224,6 +228,10 @@
 	  $("#manage_person li").delegate(".delete_person","click",function(){
 		  $(this).parent().parent().remove();
       });
+	  
+	  var index = parent.layer.getFrameIndex(window.name);
+	 // parent.layer.close(index);
+	 //parent.$('#5-get_iframe_videoid').val('suc');
       
     });
 

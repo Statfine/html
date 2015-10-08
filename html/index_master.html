@@ -288,6 +288,8 @@
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/respond/respond.js"></script>
   
+  <script src="../js/layer/layer.js"></script>
+  
   <script>
     $(document).ready(function(){
 
@@ -312,6 +314,32 @@
             $("#left_project_num_action").hide();
          }
       });
+	  
+	  $(".creat_new_project").click(function(){
+		  
+		  	var url = "alert_new_video.html?id=1";
+			
+			//页面层-自定义
+			layer.open({
+				type: 2,
+				title: false,
+				closeBtn: false,
+				shadeClose: true,
+				area: ['400px', '610px'],
+				skin: 'yourclass',
+				content: url,
+				close: function(url){
+//					alert(layer.getChildFrame('#video_id', url).val())
+					alert('close');
+				},
+				end: function(){
+					alert('end');
+				}
+			});
+		  
+	  });
+	  
+	  
 
     });
 
