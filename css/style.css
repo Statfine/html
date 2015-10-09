@@ -1,12 +1,12 @@
 
 	/** 清除内外边距 **/
-	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+	body, h1, h2, h3, h4, h5, h6, hr, p,span, blockquote, /* structural elements 结构元素 */
 	dl, dt, dd, ul, ol, li, 
 	pre, 
 	form, fieldset, legend, button, input, textarea, 
-	th, td {margin: 0;padding: 0; word-break:break-all; word-wrap:break-word; box-sizing: border-box;}
+	th, td {margin: 0;padding: 0; word-break:break-all; word-wrap:break-word; box-sizing: border-box; line-height:0}
 
 	li {list-style-type:none}
 
 
-body { min-width: 1180px; height: 100%; background-color: #f7f7f7; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px;}
+body { min-width: 1180px; height: 100%; background-color: #f9f9f9; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px;}

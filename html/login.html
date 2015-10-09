@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js" style="height: 100%"> <!--<![endif]-->
+  
+  <head>
+  	<meta charset="utf-8">
+    <meta name="Description" content="description">
+    <title>登录</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+      
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+  	<!-- ================== END BASE CSS STYLE ================== -->
+
+    <style type="text/css">
+	
+		.img_logo {width:260px; height:108px; margin:80px auto 60px auto}
+		.img_logo img {width:260px; height:108px;}
+		
+		.content_action {width:462px; margin:0 auto; background-color:#fff}
+		.content_action .tab li {float:left; width:231px; height:60px; line-height:60px; background-color:#ecf0e5; color:#797979; text-align:center; font-size:16px; font-weight:bold; cursor:pointer}
+		.content_action .tab .choose { background-color:#417851; color:#fff}
+	  
+    </style>
+    
+  </head>
+
+
+
+  <body>
+  
+	<div class="img_logo">
+    	<img src="">
+    </div>
+    
+    <div class="content_action">
+    	
+        <ul class="tab clearfix">
+        	<li class="choose" attr-data="1">注册亿幕用户</li>
+            <li attr-data="2">老用户登录</li>
+        </ul>
+        
+        <!-- 注册 Step 1 -->
+        <div class="regist" style=" display: block">
+            
+            <!-- Step 1 -->
+            <div class="regist_step_one" style=" display: block">
+                
+                <div style="padding:60px 41px 13px 41px;">
+                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="输入您Email获取验证码">
+                    
+                    <div class="clearfix" style="margin-top:22px">
+                        <input style="outline:none; border:1px solid #e3e3e3; width:240px; height:36px; line-height:36px; padding:0 10px; float:left" placeholder="手机验证码">
+                        <div style="width:120px; height:36px; line-height:36px; margin-left:20px; background-color:#73b120; color:#fff; float:left; text-align:center;cursor:pointer">确认验证码</div> 
+                    </div>
+                    
+                    <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+                </div>
+                
+                <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
+                    <p id="sure_email" style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer">确定</p>
+                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+                </div>
+                
+            </div>
+            <!-- Step 1 -->
+        
+        	<!-- Step 2 -->
+            <div class="regist_step_two" style="  display: none">
+            
+                <div style="padding:60px 41px 13px 41px;">
+                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="输入您的手机号码获取验证码">
+                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
+                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
+                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
+                    <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+                </div>
+                
+                <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
+                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer" id="regist_btn">确定</p>
+                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+                </div>
+                
+            </div>
+            <!-- Step 2 -->
+            
+        </div>
+        <!-- 注册 Step 1 -->
+        
+        <!-- 登录  -->
+        <div class="login" style="display: none">
+        
+        	<div style="padding:60px 41px 13px 41px;">
+                <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="Email">
+                <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="密码">
+                <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+            </div>
+            
+            <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
+            	<p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer" id="login_btn">确定</p>
+            	<p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+            </div>
+        
+        </div>
+        <!-- 登录  -->
+    
+    </div>
+      
+  </body>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.5/jquery.lazyload.min.js"></script>
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/respond/respond.js"></script>
+  
+  <script src="../js/layer/layer.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+
+      //图片插件
+      $("img.lazy").lazyload({
+        effect: "fadeIn",
+        skip_invisible : false,
+        threshold : 100 
+      });
+      
+	  $(".tab").delegate("li","click",function(){   
+         if(!$(this).hasClass('choose')){
+			 $(".tab li").removeClass("choose");
+			 $(this).addClass('choose');
+			 
+			 var witch = $(this).attr('attr-data');
+			 if(witch == 1){
+				 $(".regist").show();
+				 $(".login").hide();
+			 }else{
+				 $(".regist").hide();
+				 $(".login").show();
+			 }
+		 }
+      });
+	  
+	  $("#sure_email").click(function(){
+		  $('.regist_step_one').hide();
+		  $('.regist_step_two').show();
+	  });
+	  $("#regist_btn").click(function(){
+		  alert('regist')
+	  });
+	  $("#login_btn").click(function(){
+		  alert('login')
+	  });
+
+    });
+
+  </script>
+
+</html>
+
+
