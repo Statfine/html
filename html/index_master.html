@@ -266,6 +266,23 @@
             </ul>
           </div>
           <!-- 进行中项目 -->
+          
+          <div style="width: 220px;background: #2d353c;z-index: 10;-webkit-transform: translateZ(0);">
+          
+          	<ul class="nav" id="side_menu">
+            	<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right" style="margin-top: 8px"></b>
+						<span>Dashboard</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="active">Dashboard v1</li>
+						<li>Dashboard v2</li>
+					</ul>
+				</li>
+            </ul>
+            
+          </div>
 
           <!-- 完成项目 -->
           <!-- 完成项目 -->
@@ -338,6 +355,21 @@
 			});
 		  
 	  });
+	  
+	  
+	  var heightShow = $(".sub-menu").height();
+	  $("#side_menu li").delegate("a","click",function(){   
+        var obj = $(this).parent().find(".sub-menu");
+		if(obj.is(":hidden")){
+			obj.show();
+			obj.css('height','0px');
+			obj.stop().animate({height:heightShow},200);
+		}else{
+			obj.stop().animate({height:0},200,function(){
+				obj.hide();
+			});
+		}
+      });
 	  
 	  
 
