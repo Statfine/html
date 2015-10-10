@@ -15,6 +15,8 @@
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cover_layer.css">
+    <link rel="stylesheet" href="../js/selectlist/css/jquery.selectlist.css">
   	<!-- ================== END BASE CSS STYLE ================== -->
 
     <style type="text/css">
@@ -69,7 +71,7 @@
         	发起任务
         </div>
         
-        <div style="width:220px; height:40px; line-height:40px; text-align:center; background-color:#fff; color:#73b120; cursor:pointer; margin:10px 0 20px 0">
+        <div id="join_task" style="width:220px; height:40px; line-height:40px; text-align:center; background-color:#fff; color:#73b120; cursor:pointer; margin:10px 0 20px 0">
         	参与任务
         </div>
       	
@@ -105,18 +107,110 @@
   	<!-- 内容区域 -->
     
     
-    <!-- 发起任务悬浮层 -->
-    <div id="cover_layer" style="display: none;position: fixed;z-index: 1000;top: 50px;left: 0px;height: 100%;width: 100%;background: #000;opacity: 0.6;
-filter: alpha(opacity=60);-moz-opacity: 0.6;">
-		
-	</div>
+    <!-- 悬浮层 -->
+    <div id="cover_layer" class="cover_layer"></div>
     
-    <div id="initiating_task_layer" style="position: absolute;z-index: 1100;width: 100%;top: 50px;display:none">
-        <div style="width:1180px; margin:0 auto; height:300px; background-color:#fff">
+    <!-- 发起任务 -->
+    <div id="initiating_task_layer" class="layer_content">
+        <div style="width:1180px; margin:0 auto; height:300px; background-color:#f9f9f9">
         	
         
         </div>
     </div>
+    <!-- 发起任务 -->
+
+    <!-- 参与任务 -->
+    <div id="join_task_layer" class="layer_content">
+        <div class="join_layer_content">
+          <div class="pOne">此功能暂不开放</div>
+          <div class="pTwo">敬请期待</div>
+          <div class="dismiss_join_task_layer" id="dismiss_join_task_layer">确定</div>
+        
+        </div>
+    </div>
+    <!-- 参与任务 -->
+
+    <!--  完善资料 -->
+    <div id="complete_data_layer" class="layer_content" style="display: block">
+        <div class="complete_layer_content">
+          <p class="layer_title">完善您的用户资料</p>
+          <div class="input_content">
+
+            <div>
+              <span style="margin-right: 40px" >性别</span>
+              <select id="sex" name="sex" >
+                <option value="男">男</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+              </select>
+            </div>
+
+            <div class="margin_t_t">
+              <span style="margin-right: 40px" >生日</span>
+              <select id="year" name="year" >
+                <option value="">年</option>
+
+              </select>
+              <span style="margin-right: 20px" ></span>
+              <select id="month" name="month" >
+                <option value="">月</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+              <span style="margin-right: 20px" ></span> 
+              <select id="day" name="day" >
+                <option value="">日</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+
+            <div class="margin_t_t">
+              <span style="margin-right: 27px" >所在地</span>
+              <select id="country" name="country" >
+                <option value="">国家</option>
+                <option value="中国">中国</option>
+                <option value="美国">美国</option>
+              </select>
+              <span style="margin-right: 20px" ></span>
+              <select id="area" name="area" >
+                <option value="">省/州/区</option>
+              </select>
+              <span style="margin-right: 20px" ></span> 
+              <select id="city" name="city" >
+                <option value="">市</option>
+              </select>
+            </div>
+
+            <div class="margin_t_t">
+              <span style="margin-right: 13px" >联系方式</span>
+              <input class="input_phone" type="number" placeholder="请输入您的手机号">
+            </div>
+
+            <p style="margin-top: 38px">感兴趣的视频类型</p>
+
+            <ul class="type_ul clearfix">
+              <li >新闻</li>
+              <li >娱乐</li>
+              <li >韩剧</li>
+              <li class="choose">体育</li>
+            </ul>
+
+          </div>
+          <div class="button_action clearfix">
+            <div id="save_complete_data_layer">保存</div>
+            <div id="dismiss_complete_data_layer">跳过</div>
+          </div>
+        
+        </div>
+    </div>
+    <!-- 完善资料 -->
+
     <!-- 悬浮层 -->
 
     
@@ -130,9 +224,12 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.5/jquery.lazyload.min.js"></script>
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/respond/respond.js"></script>
+
+  <script src="../js/selectlist/js/jquery.selectlist.js"></script>
   
   <script>
     $(document).ready(function(){
+
 
       //图片插件
       $("img.lazy").lazyload({
@@ -162,15 +259,104 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
 
   //悬浮层
   $(document).ready(function(){
+
     $("#initiating_task").click(function(){
       $("#cover_layer").show();
       $("#initiating_task_layer").show();
     });
 
-    $("#cover_layer").click(function(){
-      $("#cover_layer").hide();
-      $("#initiating_task_layer").hide();
+    
+    $("#join_task").click(function(){
+      $("#cover_layer").show();
+      $("#join_task_layer").show();
     });
+
+    // $("#cover_layer").click(function(){
+    //   if(!$("#complete_data_layer").is(":hidden")){
+    //     return;
+    //   }
+    //   $("#cover_layer").hide();
+    //   $("#initiating_task_layer").hide();
+    //   $("#join_task_layer").hide();
+    // });
+
+  });
+
+  //悬浮层(加入任务)
+  $(document).ready(function(){
+    $('#dismiss_join_task_layer').click(function(){
+      $("#cover_layer").hide();
+      $("#join_task_layer").hide();
+    });
+  });
+
+  //悬浮层(欢迎)
+  $(document).ready(function(){
+
+    $('#sex').selectlist({
+        zIndex: 10,
+        width: 110,
+        height: 36,
+      });
+
+
+    var yearList = null;
+    for(var startYear = 1960; startYear < 2016; startYear++){
+      yearList+='<option value="'+startYear+'">'+startYear+'</option>';
+    }
+    $("#year").append(yearList);
+    $('#year').selectlist({
+        zIndex: 9,
+        width: 110,
+        height: 36,
+      });
+
+    var monthList = null;
+    for(var startMonth = 1; startMonth < 13; startMonth++){
+      monthList+='<option value="'+startMonth+'">'+startMonth+'</option>';
+    }
+    $("#month").append(monthList);
+    $('#month').selectlist({
+        zIndex: 9,
+        width: 110,
+        height: 36,
+      });
+
+    $('#day').selectlist({
+        zIndex: 9,
+        width: 110,
+        height: 36,
+      });
+
+
+    $('#country').selectlist({
+        zIndex: 8,
+        width: 160,
+        height: 36,
+      });
+    $('#area').selectlist({
+        zIndex: 8,
+        width: 160,
+        height: 36,
+      });
+    $("#city").append("<option value=''>市2</option>");
+    $("#city").append("<option value=''>市3</option>");
+    $('#city').selectlist({
+        zIndex: 8,
+        width: 160,
+        height: 36,
+      });
+
+    $("#dismiss_complete_data_layer").click(function(){
+      $("#cover_layer").hide();
+      $("#complete_data_layer").hide();
+    });
+    $("#save_complete_data_layer").click(function(){
+      alert('save')
+      $("#cover_layer").hide();
+      $("#complete_data_layer").hide();
+    });
+
   });
 
 

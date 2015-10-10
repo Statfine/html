@@ -1,0 +1,26 @@
+
+.cover_layer {display: block;position: fixed;z-index: 1000;top: 50px;left: 0px;height: 100%;width: 100%;background: #000;opacity: 0.6;filter: alpha(opacity=60);-moz-opacity: 0.6;}
+
+.layer_content {position: absolute;z-index: 1100;width: 100%;top: 50px;display:none}
+
+/*参与任务*/
+.layer_content .join_layer_content {width:1180px; margin:0 auto; height:565px; background-color:#f9f9f9; padding-top: 140px}
+.layer_content .join_layer_content .pOne {text-align: center; height:26px;line-height: 26px; color: #000; font-size: 24px}
+.layer_content .join_layer_content .pTwo {text-align: center; padding-top: 10px; height:26px;line-height: 26px; color: #000; font-size: 24px}
+.layer_content .join_layer_content .dismiss_join_task_layer {width: 180px; height: 50px; line-height: 50px; margin: 200px auto 0 auto;letter-spacing:8px; text-align: center; background-color: #73b120; font-size: 18px; color: #fff; cursor: pointer}
+
+/*完善资料*/
+.layer_content .complete_layer_content {width:1180px; margin:0 auto; height:565px; background-color:#f9f9f9}
+.layer_content .complete_layer_content .layer_title {height: 77px; line-height: 77px; border-bottom: 1px solid #e3e3e3; padding: 0 52px; font-size: 18px}
+.layer_content .complete_layer_content .input_content {height: 447px; padding: 40px 52px 0 52px}
+.layer_content .complete_layer_content .input_content .margin_t_t {margin-top: 20px}
+.layer_content .complete_layer_content .input_content .input_phone {outline:none; border:1px solid #e3e3e3; width:210px; height:36px; line-height:36px; padding:0 10px}
+.layer_content .complete_layer_content .input_content .type_ul {margin-top: 22px}
+.layer_content .complete_layer_content .input_content .type_ul li {width: 80px; height: 28px; line-height: 28px; text-align: center; border:1px solid #e3e3e3; background-color: #fff; color: #000; margin: 0 10px 10px 0; float: left; cursor: pointer;}
+.layer_content .complete_layer_content .input_content .type_ul .choose {border:1px solid #9cb679; background-color: #b2ce8e; color: #fff;}
+.layer_content .complete_layer_content .button_action {height:41px;border-top: 1px solid #e3e3e3;}
+.layer_content .complete_layer_content .button_action #save_complete_data_layer {width: 120px; height: 40px; line-height: 40px;float: right; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer}
+.layer_content .complete_layer_content .button_action #dismiss_complete_data_layer {width: 120px; height: 40px; line-height: 40px;float: right;text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer}
+
+
+

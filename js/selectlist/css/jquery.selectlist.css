@@ -13,7 +13,7 @@
     border: 1px solid #e3e3e3;
   }
   .select-wrapper.focus{
-    border: 1px solid #61b988;
+    border: 1px solid #b2ce8e;
   }
   .select-button{
     font: normal 14px '\5FAE\8F6F\96C5\9ED1';
@@ -81,7 +81,7 @@
   .select-list ul li.selected,
   .select-list ul li:hover{
     color: #fff;
-    background: #61b988;
+    background: #b2ce8e;
   }
   
   /* 下拉列表不可用样式 */
