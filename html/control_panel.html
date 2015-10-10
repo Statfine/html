@@ -118,8 +118,6 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/respond/respond.js"></script>
   
-  <script src="../js/layer/layer.js"></script>
-  
   <script>
     $(document).ready(function(){
 
@@ -130,17 +128,17 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
         threshold : 100 
       });
       
-	  $("#side_menu").delegate(".has-sub","click",function(){   
-        var obj = $(this).parent().find(".sub-menu");
-		if(obj.is(":hidden")){
-			obj.show();
-			obj.css('height','0px');
-			obj.stop().animate({height:105},200);
-		}else{
-			obj.stop().animate({height:0},200,function(){
-				obj.hide();
-			});
-		}
+  	  $("#side_menu").delegate(".has-sub","click",function(){   
+          var obj = $(this).parent().find(".sub-menu");
+    		if(obj.is(":hidden")){
+    			obj.show();
+    			obj.css('height','0px');
+    			obj.stop().animate({height:105},200);
+    		}else{
+    			obj.stop().animate({height:0},200,function(){
+    				obj.hide();
+    			});
+    		}
       });
 	  
 

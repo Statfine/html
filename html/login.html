@@ -15,6 +15,7 @@
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/selectlist/css/jquery.selectlist.css">
   	<!-- ================== END BASE CSS STYLE ================== -->
 
     <style type="text/css">
@@ -79,6 +80,19 @@
                     <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
                     <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
                     <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+
+                    
+                    <div style="margin-top: 20px">
+                      <select id="salary" name="salary" >
+                        <option value="" selected="true" style="display: none">选择母语</option><!-- 首个默认隐藏 样式表中设置-->
+                        <option value="英文">英文</option>
+                        <option value="中文">中文</option>
+                        <option value="日语">日语</option>
+                        <option value="韩语">韩语</option>
+                        <option value="马来语">马来语</option>
+                      </select>
+                    </div>
+
                 </div>
                 
                 <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
@@ -115,16 +129,22 @@
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.5/jquery.lazyload.min.js"></script>
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/respond/respond.js"></script>
-  
-  <script src="../js/layer/layer.js"></script>
+
+  <script src="../js/selectlist/js/jquery.selectlist.js"></script>
   
   <script>
     $(document).ready(function(){
+
+      $('select').selectlist({
+        zIndex: 10,
+        width: 378,
+        height: 34,
+      });
 
       //图片插件
       $("img.lazy").lazyload({
@@ -133,32 +153,34 @@
         threshold : 100 
       });
       
-	  $(".tab").delegate("li","click",function(){   
-         if(!$(this).hasClass('choose')){
-			 $(".tab li").removeClass("choose");
-			 $(this).addClass('choose');
-			 
-			 var witch = $(this).attr('attr-data');
-			 if(witch == 1){
-				 $(".regist").show();
-				 $(".login").hide();
-			 }else{
-				 $(".regist").hide();
-				 $(".login").show();
-			 }
-		 }
+  	  $(".tab").delegate("li","click",function(){   
+           if(!$(this).hasClass('choose')){
+    			 $(".tab li").removeClass("choose");
+    			 $(this).addClass('choose');
+    			 
+    			 var witch = $(this).attr('attr-data');
+    			 if(witch == 1){
+    				 $(".regist").show();
+    				 $(".login").hide();
+    			 }else{
+    				 $(".regist").hide();
+    				 $(".login").show();
+    			 }
+    		 }
       });
+
+    
 	  
-	  $("#sure_email").click(function(){
-		  $('.regist_step_one').hide();
-		  $('.regist_step_two').show();
-	  });
-	  $("#regist_btn").click(function(){
-		  alert('regist')
-	  });
-	  $("#login_btn").click(function(){
-		  alert('login')
-	  });
+  	  $("#sure_email").click(function(){
+  		  $('.regist_step_one').hide();
+  		  $('.regist_step_two').show();
+  	  });
+  	  $("#regist_btn").click(function(){
+  		  alert('regist')
+  	  });
+  	  $("#login_btn").click(function(){
+  		  alert('login')
+  	  });
 
     });
 
