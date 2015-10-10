@@ -64,22 +64,30 @@
       
       <!-- 左边区域 -->
       <div class="left_project">
+      
+      	<div id="initiating_task" style="width:220px; height:40px; line-height:40px; text-align:center; background-color:#fff; color:#73b120; cursor:pointer">
+        	发起任务
+        </div>
+        
+        <div style="width:220px; height:40px; line-height:40px; text-align:center; background-color:#fff; color:#73b120; cursor:pointer; margin:10px 0 20px 0">
+        	参与任务
+        </div>
       	
         <ul class="nav" id="side_menu">
-        		<li style=" width:220px; min-height:50px; line-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px" class="choose">
+        		<li style=" width:220px; min-height:50px; line-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px; cursor:pointer" class="choose">
                 	<p style="height:50px; line-height:50px; text-align: left">控制面板</p>
                 </li>
-            	<li class="has-sub" style=" width:220px; min-height:50px; line-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px">
+            	<li class="has-sub" style=" width:220px; min-height:50px; line-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px; cursor:pointer">
 					
 					<p style="height:50px; line-height:50px; text-align:left">项目管理<b class="caret pull-right" style="margin-top: 25px;margin-right: 10px"></b></p>
 					<ul class="sub-menu" style="display: none;">
-						<li class="" style="height:35px; line-height:35px; padding-left:32px">全部项目</li>
-						<li style="height:35px; line-height:35px; padding-left:32px">我发起的</li>
-                        <li style="height:35px; line-height:35px; padding-left:32px">我参与的</li>
+						<li class="" style="height:35px; line-height:35px; padding-left:32px; cursor:pointer">全部项目</li>
+						<li style="height:35px; line-height:35px; padding-left:32px; cursor:pointer">我发起的</li>
+                        <li style="height:35px; line-height:35px; padding-left:32px; cursor:pointer">我参与的</li>
 					</ul>
 				</li>
-                <li style=" width:220px; height:50px; min-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px">
-                	<p style="height:50px; line-height:50px; text-align: left">控制面板</p>
+                <li style=" width:220px; height:50px; min-height:50px; border-bottom:1px solid #e3e3e3;padding-left:15px; cursor:pointer">
+                	<p style="height:50px; line-height:50px; text-align: left">控制面板<b class="caret pull-right" style="margin-top: 25px;margin-right: 10px"></b></p>
                 </li>
 		</ul>
 
@@ -97,13 +105,18 @@
   	<!-- 内容区域 -->
     
     
-    <!-- -->
-    <div style="display: none;position: fixed;z-index: 1000;top: 50px;left: 0px;height: 100%;width: 100%;background: #000;opacity: 0.6;
+    <!-- 发起任务悬浮层 -->
+    <div id="cover_layer" style="display: none;position: fixed;z-index: 1000;top: 50px;left: 0px;height: 100%;width: 100%;background: #000;opacity: 0.6;
 filter: alpha(opacity=60);-moz-opacity: 0.6;">
-		<div style="position: absolute;z-index: 1100; left:50%; width:100px; margin-left:-50px; height:100px; background-color:#09C">
+		
+	</div>
+    
+    <div id="initiating_task_layer" style="position: absolute;z-index: 1100;width: 100%;top: 50px;display:none">
+        <div style="width:1180px; margin:0 auto; height:300px; background-color:#fff">
+        	
         
         </div>
-	</div>
+    </div>
     <!-- 悬浮层 -->
 
     
@@ -140,6 +153,11 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
     			});
     		}
       });
+	  
+	  $("#initiating_task").click(function(){
+		  $("#cover_layer").show();
+		  $("#initiating_task_layer").show();
+	  });
 	  
 
     });
