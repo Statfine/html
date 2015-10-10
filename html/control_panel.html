@@ -154,13 +154,25 @@ filter: alpha(opacity=60);-moz-opacity: 0.6;">
     		}
       });
 	  
-	  $("#initiating_task").click(function(){
-		  $("#cover_layer").show();
-		  $("#initiating_task_layer").show();
-	  });
+	  
 	  
 
     });
+
+
+  //悬浮层
+  $(document).ready(function(){
+    $("#initiating_task").click(function(){
+      $("#cover_layer").show();
+      $("#initiating_task_layer").show();
+    });
+
+    $("#cover_layer").click(function(){
+      $("#cover_layer").hide();
+      $("#initiating_task_layer").hide();
+    });
+  });
+
 
   </script>
 
