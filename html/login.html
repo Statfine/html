@@ -26,7 +26,34 @@
 		.content_action {width:462px; margin:0 auto; background-color:#fff}
 		.content_action .tab li {float:left; width:231px; height:60px; line-height:60px; background-color:#ecf0e5; color:#797979; text-align:center; font-size:16px; font-weight:bold; cursor:pointer}
 		.content_action .tab .choose { background-color:#417851; color:#fff}
-	  
+
+    .error_login {width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000}
+    .regist {display: block}
+    .input_text {outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px}
+    .margin-t { margin-top: 22px}
+
+    .regist .regist_step_one {display: block}
+    .regist .regist_step_one .input_content {padding:60px 41px 13px 41px;}
+    .regist .regist_step_one .input_content .verification {margin-top:22px}
+    .regist .regist_step_one .input_content .verification .verification_input {outline:none; border:1px solid #e3e3e3; width:240px; height:36px; line-height:36px; padding:0 10px; float:left}
+    .regist .regist_step_one .input_content .verification .get_verification {width:120px; height:36px; line-height:36px; margin-left:20px; background-color:#73b120; color:#fff; float:left; text-align:center;cursor:pointer}
+    .regist .regist_step_one .input_content .verification .disget_verification {background-color: #e3e3e3; color: #fff}
+    .regist .regist_step_one .action_btn {margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right}
+	  .regist .regist_step_one .action_btn .sure_regist {float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:1px; cursor:pointer}
+
+    .regist .regist_step_two {display: none}
+    .regist .regist_step_two .input_content {padding:60px 41px 13px 41px;}
+    .regist .regist_step_two .input_content .select_language {margin-top: 20px}
+    .regist .regist_step_two .action_btn {margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right}
+    .regist .regist_step_two .action_btn .filish_regist {float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:1px; border-top:1px solid #e3e3e3; cursor:pointer}
+    .regist .regist_step_two .action_btn .cancel_regist {float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer}
+
+    .login {display: none}
+    .login .input_content {padding:60px 41px 13px 41px;}
+    .login .action_btn {margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right}
+    .login .action_btn .sure_login {float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer}
+    .login .action_btn .cancel_login {float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer}
+
     </style>
     
   </head>
@@ -35,7 +62,7 @@
 
   <body>
   
-	<div class="img_logo">
+	  <div class="img_logo">
     	<img src="">
     </div>
     
@@ -47,57 +74,76 @@
         </ul>
         
         <!-- 注册 Step 1 -->
-        <div class="regist" style=" display: block">
+        <div class="regist">
             
             <!-- Step 1 -->
-            <div class="regist_step_one" style=" display: block">
+            <div class="regist_step_one">
                 
-                <div style="padding:60px 41px 13px 41px;">
-                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="输入您Email获取验证码">
+                <div class="input_content">
+                    <input id="regist_email" class="input_text" type="text" placeholder="请输入您Email地址">
                     
-                    <div class="clearfix" style="margin-top:22px">
-                        <input style="outline:none; border:1px solid #e3e3e3; width:240px; height:36px; line-height:36px; padding:0 10px; float:left" placeholder="手机验证码">
-                        <div style="width:120px; height:36px; line-height:36px; margin-left:20px; background-color:#73b120; color:#fff; float:left; text-align:center;cursor:pointer">确认验证码</div> 
+                    <div class="verification clearfix">
+                        <input class="verification_input" type="text" placeholder="邮箱验证码">
+                        <div class="get_verification">获取验证码</div> 
                     </div>
                     
-                    <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+                    <div class="error_login">您输入的Email地址有误，请重新输入</div>
                 </div>
                 
-                <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
-                    <p id="sure_email" style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; cursor:pointer">确定</p>
-                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+                <div class="action_btn clearfix">
+                    <p id="sure_email" class="sure_regist">确认注册</p>
                 </div>
                 
             </div>
             <!-- Step 1 -->
         
-        	<!-- Step 2 -->
-            <div class="regist_step_two" style="  display: none">
+        	  <!-- Step 2 -->
+            <div class="regist_step_two">
             
-                <div style="padding:60px 41px 13px 41px;">
-                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="输入您的手机号码获取验证码">
-                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
-                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
-                    <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="输入您的手机号码获取验证码">
-                    <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
-
-                    
-                    <div style="margin-top: 20px">
+                <div class="input_content">
+                    <input class="input_text" type="text" placeholder="输入您的昵称">
+                    <input class="input_text margin-t" type="password" placeholder="设置密码">
+                    <input class="input_text margin-t" type="password" placeholder="重复密码">
+                     
+                    <div class="select_language">
                       <select id="salary" name="salary" >
                         <option value="" selected="true" style="display: none">选择母语</option><!-- 首个默认隐藏 样式表中设置-->
-                        <option value="英文">英文</option>
-                        <option value="中文">中文</option>
+                        <option value="英语">英语</option>
+                        <option value="汉语">汉语</option>
+                        <option value="俄语">俄语</option>
+                        <option value="法语">法语</option>
+                        <option value="德语">德语</option>
+                        <option value="阿拉伯语">阿拉伯语</option>
+                        <option value="西班牙语">西班牙语</option>
+                        <option value="葡萄牙语">葡萄牙语</option>
                         <option value="日语">日语</option>
                         <option value="韩语">韩语</option>
-                        <option value="马来语">马来语</option>
                       </select>
                     </div>
 
+                    <div class="select_language">
+                      <select id="salary－1" name="salary" >
+                        <option value="" selected="true" style="display: none">选择擅长语言</option><!-- 首个默认隐藏 样式表中设置-->
+                        <option value="英语">英语</option>
+                        <option value="汉语">汉语</option>
+                        <option value="俄语">俄语</option>
+                        <option value="法语">法语</option>
+                        <option value="德语">德语</option>
+                        <option value="阿拉伯语">阿拉伯语</option>
+                        <option value="西班牙语">西班牙语</option>
+                        <option value="葡萄牙语">葡萄牙语</option>
+                        <option value="日语">日语</option>
+                        <option value="韩语">韩语</option>
+                      </select>
+                    </div>
+
+                     <div class="error_login">您输入的手机号有误，请重新输入</div>
+
                 </div>
                 
-                <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
-                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer" id="regist_btn">确定</p>
-                    <p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+                <div class="action_btn clearfix">
+                    <p class="filish_regist" id="regist_btn">完成注册</p>
+                    <p class="cancel_regist" id＝"cancel_regist_btn">取消</p>
                 </div>
                 
             </div>
@@ -107,17 +153,16 @@
         <!-- 注册 Step 1 -->
         
         <!-- 登录  -->
-        <div class="login" style="display: none">
+        <div class="login">
         
-        	<div style="padding:60px 41px 13px 41px;">
-                <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px" placeholder="Email">
-                <input style="outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px; margin-top:22px" placeholder="密码">
-                <div style="width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000">您输入的手机号有误，请重新输入</div>
+        	<div class="input_content">
+                <input class="input_text" type="text" placeholder="Email">
+                <input class="input_text margin-t" type="password" placeholder="密码">
+                <div class="error_login">您输入的手机号有误，请重新输入</div>
             </div>
             
-            <div style="margin-top:25px; height:38px; border-top:1px solid #e3e3e3; text-align:right" class="clearfix">
-            	<p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; background-color:#73b120; color:#fff; font-size:16px; letter-spacing:8px; border-top:1px solid #e3e3e3; cursor:pointer" id="login_btn">确定</p>
-            	<p style="float:right; width:120px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:16px; color:#81b84a; letter-spacing:8px; cursor:pointer">取消</p>
+            <div  class="action_btn clearfix">
+            	<p class="sure_login" id="login_btn">登陆</p>
             </div>
         
         </div>
@@ -138,6 +183,10 @@
   <script src="../js/selectlist/js/jquery.selectlist.js"></script>
   
   <script>
+
+  var timeTotle = 120;
+  var timmer = null;
+
     $(document).ready(function(){
 
       $('select').selectlist({
@@ -169,8 +218,14 @@
     		 }
       });
 
-    
-	  
+      //获取验证码
+	    $(".get_verification").click(function(){
+        if(!$(this).hasClass('disget_verification')){
+          timer($(this));
+        }
+      });
+
+
   	  $("#sure_email").click(function(){
   		  $('.regist_step_one').hide();
   		  $('.regist_step_two').show();
@@ -178,11 +233,33 @@
   	  $("#regist_btn").click(function(){
   		  alert('regist')
   	  });
+      $("#cancel_regist_btn").click(function(){
+        $('.regist_step_one').show();
+        $('.regist_step_two').hide();
+      });
   	  $("#login_btn").click(function(){
   		  alert('login')
   	  });
 
     });
+
+  function timer(objBtn){
+    timeTotle = 120;
+    objBtn.addClass('disget_verification');
+    timmer = window.setInterval(function(){
+      if(timeTotle > 0){
+        var timeText = '重新获取（'+ timeTotle+')';
+        objBtn.text(timeText);
+        timeTotle--;
+      }else{
+        clearInterval(timmer);
+        timmer == null;
+        objBtn.removeClass('disget_verification');
+        objBtn.text('获取验证码');
+      }
+
+    },1000);
+  }
 
   </script>
 
