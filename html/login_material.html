@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js" style="height: 100%"> <!--<![endif]-->
+  
+  <head>
+  	<meta charset="utf-8">
+    <meta name="Description" content="description">
+    <title>登录</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+      
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="../css/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../js/selectlist/css/jquery.selectlist.css">
+  	<!-- ================== END BASE CSS STYLE ================== -->
+
+    <style type="text/css">
+		.img_logo {width:260px; height:108px; margin:80px auto 60px auto}
+		.img_logo img {width:260px; height:108px;}
+		
+		.content_action {width:462px; margin:0 auto; background-color:#fff}
+	
+		.input-field { margin-top:0; padding:0!important;}
+		label {left:0!important;}
+		.tabs {border-bottom: 1px solid #e3e3e3;}
+		.tabs .tab a { color:#388cf8}
+		.tabs .tab a:hover {color: #388cf8;}
+		.tabs .indicator { background-color:#388cf8}
+    </style>
+    
+  </head>
+
+
+
+  <body>
+  
+	  <div class="img_logo">
+    	<img src="">
+    </div>
+    
+    <div class="content_action">
+    	
+       <div class="row">
+        <div class="col s12" style="padding:0">
+          <ul class="tabs">
+            <li class="tab col s3"><a href="#test1">Test 1</a></li>
+            <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+          </ul>
+        </div>
+        <div id="test1" class="col s12" style="padding:40px 41px 13px 41px;">
+        	<div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+			</div>
+            <div class="clearfix">
+            	<div class="row" style="width:240px; float:left">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn" style="width:120px; height:36px; line-height:36px; margin-left:20px; background-color:#73b120; color:#fff; float:left; text-align:center;cursor:pointer">获取验证码</a> 
+            </div>
+        </div>
+        <div id="test2" class="col s12">Test 2</div>
+      </div>
+        
+    </div>
+    
+    
+      
+  </body>
+
+
+
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.5/jquery.lazyload.min.js"></script>
+  <script src="../css/materialize/js/materialize.min.js"></script>
+  <script src="../js/respond/respond.js"></script>
+
+  <script src="../js/selectlist/js/jquery.selectlist.js"></script>
+  
+  <script>
+
+  var timeTotle = 120;
+  var timmer = null;
+
+    $(document).ready(function(){
+
+      $('select').selectlist({
+        zIndex: 10,
+        width: 378,
+        height: 34,
+      });
+
+      //图片插件
+      $("img.lazy").lazyload({
+        effect: "fadeIn",
+        skip_invisible : false,
+        threshold : 100 
+      });
+      
+  	  $(".tab").delegate("li","click",function(){   
+           if(!$(this).hasClass('choose')){
+    			 $(".tab li").removeClass("choose");
+    			 $(this).addClass('choose');
+    			 
+    			 var witch = $(this).attr('attr-data');
+    			 if(witch == 1){
+    				 $(".regist").show();
+    				 $(".login").hide();
+    			 }else{
+    				 $(".regist").hide();
+    				 $(".login").show();
+    			 }
+    		 }
+      });
+
+      //获取验证码
+	    $(".get_verification").click(function(){
+        if(!$(this).hasClass('disget_verification')){
+          timer($(this));
+        }
+      });
+
+
+  	  $("#sure_email").click(function(){
+  		  $('.regist_step_one').hide();
+  		  $('.regist_step_two').show();
+  	  });
+  	  $("#regist_btn").click(function(){
+  		  alert('regist')
+  	  });
+      $("#cancel_regist_btn").click(function(){
+        $('.regist_step_one').show();
+        $('.regist_step_two').hide();
+      });
+  	  $("#login_btn").click(function(){
+  		  alert('login')
+  	  });
+
+    });
+
+  function timer(objBtn){
+    timeTotle = 120;
+    objBtn.addClass('disget_verification');
+    timmer = window.setInterval(function(){
+      if(timeTotle > 0){
+        var timeText = '重新获取（'+ timeTotle+')';
+        objBtn.text(timeText);
+        timeTotle--;
+      }else{
+        clearInterval(timmer);
+        timmer == null;
+        objBtn.removeClass('disget_verification');
+        objBtn.text('获取验证码');
+      }
+
+    },1000);
+  }
+
+  </script>
+
+</html>
+
+

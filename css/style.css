@@ -4,9 +4,14 @@
 	dl, dt, dd, ul, ol, li, 
 	pre, 
 	form, fieldset, legend, button, input, textarea, 
-	th, td {margin: 0;padding: 0; word-break:break-all; word-wrap:break-word; box-sizing: border-box; line-height:0}
+	th, td {margin: 0;padding: 0; word-break:break-all; word-wrap:break-word; box-sizing: border-box;}
 
 	li {list-style-type:none}
+	
+	.clearfix:before, .clearfix:after {
+	display: table;
+	content: " ";
+	}
 
 
-body { min-width: 1180px; height: 100%; background-color: #f9f9f9; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px;}
+	body { min-width: 1180px; height: 100%; background-color: #f9f9f9; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px;}
