@@ -48,8 +48,8 @@
        <div class="row">
         <div class="col s12" style="padding:0">
           <ul class="tabs">
-            <li class="tab col s3"><a href="#test1">Test 1</a></li>
-            <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+            <li class="tab col s3"><a class="active" href="#test1">Test 1</a></li>
+            <li class="tab col s3"><a href="#test2">Test 2</a></li>
           </ul>
         </div>
         <div id="test1" class="col s12" style="padding:40px 41px 13px 41px;">
@@ -90,16 +90,7 @@
   
   <script>
 
-  var timeTotle = 120;
-  var timmer = null;
-
     $(document).ready(function(){
-
-      $('select').selectlist({
-        zIndex: 10,
-        width: 378,
-        height: 34,
-      });
 
       //图片插件
       $("img.lazy").lazyload({
@@ -107,65 +98,10 @@
         skip_invisible : false,
         threshold : 100 
       });
-      
-  	  $(".tab").delegate("li","click",function(){   
-           if(!$(this).hasClass('choose')){
-    			 $(".tab li").removeClass("choose");
-    			 $(this).addClass('choose');
-    			 
-    			 var witch = $(this).attr('attr-data');
-    			 if(witch == 1){
-    				 $(".regist").show();
-    				 $(".login").hide();
-    			 }else{
-    				 $(".regist").hide();
-    				 $(".login").show();
-    			 }
-    		 }
-      });
-
-      //获取验证码
-	    $(".get_verification").click(function(){
-        if(!$(this).hasClass('disget_verification')){
-          timer($(this));
-        }
-      });
-
-
-  	  $("#sure_email").click(function(){
-  		  $('.regist_step_one').hide();
-  		  $('.regist_step_two').show();
-  	  });
-  	  $("#regist_btn").click(function(){
-  		  alert('regist')
-  	  });
-      $("#cancel_regist_btn").click(function(){
-        $('.regist_step_one').show();
-        $('.regist_step_two').hide();
-      });
-  	  $("#login_btn").click(function(){
-  		  alert('login')
-  	  });
 
     });
 
-  function timer(objBtn){
-    timeTotle = 120;
-    objBtn.addClass('disget_verification');
-    timmer = window.setInterval(function(){
-      if(timeTotle > 0){
-        var timeText = '重新获取（'+ timeTotle+')';
-        objBtn.text(timeText);
-        timeTotle--;
-      }else{
-        clearInterval(timmer);
-        timmer == null;
-        objBtn.removeClass('disget_verification');
-        objBtn.text('获取验证码');
-      }
-
-    },1000);
-  }
+ 
 
   </script>
 
