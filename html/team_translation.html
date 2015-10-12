@@ -74,18 +74,20 @@
 
       <!-- 隐藏视频时显示 -->
       <div class="open_video" style=" overflow: hidden; height: 0">
-        <div style="background-color: #fff; height:50px" class="clearfix">
-          <div style="float: left">Titel</div>
-          <div style="float: left">
-            <select class="browser-default">
+        <div style="background-color: #fff; height:70px" class="clearfix">
+          <div style="float: left; height: 70px; line-height: 70px; font-size: 24px; margin-left: 20px">火影忍者剧场版</div>
+          <p style="float: left; margin:0 20px 0 200px; font-size: 12px; height:70px; line-height: 70px">原始语言</p>
+          <div style="float: left; margin-top: 16px">
+            <select class="browser-default" style="float: left; width: 180px; height: 35px">
               <option value="" disabled selected>Choose your language</option>
               <option value="1">language 1</option>
               <option value="2">language 2</option>
               <option value="3">language 3</option>
             </select>
           </div>
-          <div style="float: left">
-            <select class="browser-default">
+          <p style="float: left; margin:0 20px 0 45px; font-size: 12px; height:70px; line-height: 70px">翻译语言</p>
+          <div style="float: left; margin-top: 16px">
+            <select class="browser-default" style="float: left; width: 180px; height: 35px">
               <option value="" disabled selected>Choose your language</option>
               <option value="1">language 1</option>
               <option value="2">language 2</option>
@@ -93,7 +95,7 @@
             </select>
           </div>
         </div>
-        <div class="open_video_btn"  style="width: 1180; height: 20px; line-height: 20px; text-align: center; cursor: pointer;  background-color: #73b120;">
+        <div class="open_video_btn"  style="width: 1180; height: 18px; line-height: 18px; text-align: center; cursor: pointer;  background-color: #73b120;">
           展开
         </div>
       </div>
@@ -450,7 +452,7 @@
     });
 	  
     $(".close_video").click(function(){
-      $(".open_video").stop().animate({height:70+'px'},500);
+      $(".open_video").stop().animate({height:88+'px'},500);
       $(".video").stop().animate({height:0},500,function(){
         
       });
