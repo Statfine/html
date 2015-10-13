@@ -11,7 +11,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
+    <!--
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    -->
       
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
      <link rel="stylesheet" href="../css/materialize/css/materialize.css">
@@ -20,9 +22,7 @@
 
     <style type="text/css">
 		
-		.header_top { position:fixed; top:0; height:65px; width:100%; background-color:#fff;    box-shadow: 0 0 5px #888;
-    -webkit-box-shadow: 0 0 5px #888; -moz-box-shadow: 0 0 5px #888; z-index:1000}
-		.header_top .header_top_content {line-height:65px}
+		
 		
 		.ul_login {width:100%; height:62px; border-bottom:1px #e3e3e3 solid}
 		.ul_login li {width:50%; float:left}
@@ -58,10 +58,11 @@
      <!-- 顶部区域 -->
      <div class="header_top">
         <div class="header_top_content clearfix">
-            <img src="" style=" width:100px; height:38px; margin-left:45px;vertical-align: middle;">
-            <div style="float:right; margin-right:38px">
+            <img src="" style="width:100px; height:38px; margin-left:45px;vertical-align: middle;">
+            <div class="right_action">
+            	<i class="mdi-action-assignment-turned-in" style="vertical-align: middle;    font-size: 1.5rem;"></i>
                 <span style=" margin-right:47px">功能介绍</span>
-                <i class="material-icons dp48" style="vertical-align: middle;">search</i>
+                <i class="mdi-action-search" style="vertical-align: middle;     font-size: 1.5rem;"></i>
                 <span style="">参与任务</span>
             </div>
         </div>
@@ -74,7 +75,7 @@
             	<img src="http://imgcache.qq.com/vipstyle/nr/box/platform/img/images/index/index-bg2.png" style="width:1180px; height:auto; margin-top:122px">
                 
                 <!-- content -->
-                <div class="z-depth-1" style=" position:absolute; right:55px; top:35px; width:460px; min-height:558px; background-color:#fff">
+                <div class="z-depth-1" id="regist_login" style=" position:absolute; right:55px; top:35px; width:460px; min-height:558px; background-color:#fff">
                 	
                     <ul class="ul_login clearfix">
                         <li>
@@ -176,6 +177,18 @@
                 </div>
                 <!-- content -->
                 
+                <!-- content -->
+                <div class="z-depth-1" id="regist_suc" style=" position:absolute; right:55px; top:35px; width:460px; min-height:445px; background-color:#fff; display:none; padding:0 60px">
+                	
+                     <div style="margin-top:60px; width:147px; height:147px; margin:60px auto 15px auto">
+                     	<img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 147px; height: 147px" class="circle">
+                     </div>
+                     <p style="text-align:center; font-size:18px">感觉自己萌萌哒</p>
+                	 <button class="btn waves-effect waves-light regist_btn" id="" style="letter-spacing:1px;">控制面板</button>
+                     <button class="btn waves-effect waves-light regist_btn cancel_btn" id="">注销</button>
+                          
+                </div>
+                
                 
             </div>
         </div>
@@ -254,7 +267,8 @@
 		 	$(".regist_step_two").hide();
 		});
 		$("#complete_regist").click(function(){
-			alert(1)
+			$("#regist_login").hide();
+			$("#regist_suc").show();
 		});
 		
 		//

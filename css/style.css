@@ -21,3 +21,11 @@
 	.error_fonts { color:#F44336}
 	.ing_fonts {color:#0AA89E}
 	.complete_fonts {color:#4CAF50}
+	
+	
+	
+	
+	.header_top { position:fixed; top:0; height:65px; width:100%; background-color:#fff;    box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888; -moz-box-shadow: 0 0 5px #888; z-index:1000}
+	.header_top .header_top_content {line-height:65px}
+	.header_top .header_top_content .right_action {float:right; margin-right:38px}
