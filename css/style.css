@@ -28,4 +28,7 @@
 	.header_top { position:fixed; top:0; height:65px; width:100%; background-color:#fff;    box-shadow: 0 0 5px #888;
     -webkit-box-shadow: 0 0 5px #888; -moz-box-shadow: 0 0 5px #888; z-index:1000}
 	.header_top .header_top_content {line-height:65px}
+	.header_top .header_top_content .header_logo {width:100px; height:38px; margin-left:45px;vertical-align: middle;}
 	.header_top .header_top_content .right_action {float:right; margin-right:38px}
+	.header_top .header_top_content .right_action i {vertical-align: middle; font-size: 1.5rem;}
+	

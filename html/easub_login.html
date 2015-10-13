@@ -16,66 +16,43 @@
     -->
       
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
-     <link rel="stylesheet" href="../css/materialize/css/materialize.css">
+    <link rel="stylesheet" href="../css/materialize/css/materialize.css">
     <link rel="stylesheet" href="../css/style.css">
   	<!-- ================== END BASE CSS STYLE ================== -->
 
+    <link rel="stylesheet" href="../css/easub_login.css">
+
     <style type="text/css">
 		
-		
-		
-		.ul_login {width:100%; height:62px; border-bottom:1px #e3e3e3 solid}
-		.ul_login li {width:50%; float:left}
-		.ul_login li .tab {width:110px; margin:0 auto; line-height:62px; text-align:center; font-size:18px; color:#96999c; letter-spacing:6px; padding-left:5px;  cursor:pointer}
-		.ul_login li .tab:hover { background-color:#f2f2f3}
-		.ul_login li .choose { color:#16998c; border-bottom:2px #16998c solid;  height:61.5px}
-		
-		.regist { display:block}
-		.login { display:none}
-		
-		/*
-		6265  border-bottom: 1px solid #9e9e9e; 默认
-		6286  border-bottom: 1px solid #26a69a;box-shadow: 0 1px 0 0 #26a69a; 编辑 (0aa89e)
-		6292 border-bottom: 1px solid #4CAF50;box-shadow: 0 1px 0 0 #4CAF50 完成
-		6298 border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336 错误 (f44336)invalid   disabled
-		*/
-		
-		.complete_color {color:#4CAF50!important;}
-		.error_color {color:#f44336!important;}
-		
-		.regist_btn {margin-top:40px; width:100%; height: 40px;line-height: 40px;    background-color: #0aa89e;letter-spacing:6px; font-size:16px;box-shadow:none}
-		.regist_btn:hover {background-color: #16998c;box-shadow:none; cursor:pointer}
-		.cancel_btn {margin-top:10px; background-color:#e5e6e6; color:#20252B}
-		.cancel_btn:hover {background-color:#d2d5d5;}
     </style>
     
   </head>
 
 
 
-  <body style="height:100%; background-color:#fff; padding-top:65px">
+  <body>
  	
      <!-- 顶部区域 -->
      <div class="header_top">
         <div class="header_top_content clearfix">
-            <img src="" style="width:100px; height:38px; margin-left:45px;vertical-align: middle;">
+            <img src="" class="header_logo" title="Logo" data-no-retina alt="Logo">
             <div class="right_action">
-            	<i class="mdi-action-assignment-turned-in" style="vertical-align: middle;    font-size: 1.5rem;"></i>
-                <span style=" margin-right:47px">功能介绍</span>
-                <i class="mdi-action-search" style="vertical-align: middle;     font-size: 1.5rem;"></i>
-                <span style="">参与任务</span>
+                <span style="margin-right:47px"><i class="mdi-action-assignment-turned-in"></i>功能介绍</span>
+                
+                <span> <i class="mdi-action-search" ></i>参与任务</span>
             </div>
         </div>
     </div>
     <!-- 顶部区域 -->
-    
-    <div class="content_action" >
-		<div style="height:630px; width:100%; background-color:#e5e5e5">
-        	<div style="width:1180px; margin:0 auto 0 auto; position:relative">
-            	<img src="http://imgcache.qq.com/vipstyle/nr/box/platform/img/images/index/index-bg2.png" style="width:1180px; height:auto; margin-top:122px">
+
+
+		  <div class="content_action">
+        	<div class="info">
+            	 
+              <img class="bg_img" src="http://imgcache.qq.com/vipstyle/nr/box/platform/img/images/index/index-bg2.png" data-no-retina>
                 
-                <!-- content -->
-                <div class="z-depth-1" id="regist_login" style=" position:absolute; right:55px; top:35px; width:460px; min-height:558px; background-color:#fff">
+              <!-- content -->
+              <div class="z-depth-1 regist_login_content" id="regist_login">
                 	
                     <ul class="ul_login clearfix">
                         <li>
@@ -87,31 +64,31 @@
                     </ul>
                     
                     <!-- regist -->
-                    <div class="regist" style="padding:0 60px">
+                    <div class="regist">
                     
                     	<!-- registOne  -->
                     	<div class="row regist_step_one">
-                          <div class="input-field" style="margin-top:45px">
+                          <div class="input-field inputFile">
                             <input placeholder="" id="regist_email" type="text" class="validate">
-                            <label for="regist_email" class="active" style="left:0">邮箱</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px; display:none">邮箱已被使用</p>
+                            <label for="regist_email" class="active">邮箱</label>
+                            <p class="error_p">邮箱已被使用</p>
                           </div>
                           
-                          <div class="input-field" style="margin-top:45px">
+                          <div class="input-field inputFile">
                             <input placeholder="" id="regist_password" type="text" class="validate">
-                            <label for="regist_password" class="active" style="left:0">密码</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px; display:none">邮箱已被使用</p>
+                            <label for="regist_password" class="active">密码</label>
+                            <p class="error_p">邮箱已被使用</p>
                           </div>
                           
-                          <div class="input-field" style="margin-top:45px">
+                          <div class="input-field inputFile">
                             <input placeholder="" id="regist_sure_password" type="text" class="validate invalid">
-                            <label for="regist_sure_password" class="active error_color" style="left:0">确认密码</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px" >邮箱已被使用</p>
+                            <label for="regist_sure_password" class="active error_color">确认密码</label>
+                            <p class="error_p" style=" display: block">邮箱已被使用</p>
                           </div>
                           
-                          <p style="margin-top:35px;">
+                          <p class="copyright">
                           	<input type="checkbox" id="test5" />
-                            <label for="test5" style=" font-size:12px">我已阅读并同意相关<span style=" color:#0aa89e; text-decoration:underline">服务条款</span></label>
+                            <label for="test5">我已阅读并同意相关<span>服务条款</span></label>
                           </p>
                           
                           <button class="btn waves-effect waves-light regist_btn" id="regist_btn">注册</button>
@@ -121,10 +98,10 @@
                         
                         <!-- registTwo  -->
                         <div class="row regist_step_two" style="display:none">
-                        	<div class="input-field" style="margin-top:45px">
+                        	<div class="input-field inputFile">
                             <input placeholder="" id="regist_name" type="text" class="validate">
                             <label for="first_name" class="active" style="left:0">昵称</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px; display:none">邮箱已被使用</p>
+                            <p class="error_p">邮箱已被使用</p>
                           </div>
                           
                           <ul id="choose_language">
@@ -142,7 +119,7 @@
                               </li>
                           </ul>
                           
-                          <p id="add_good_language" style="color:#0aa89e; cursor:pointer; font-size:12px">+添加擅长语言</p>
+                          <p id="add_good_language" class="add_language">+添加擅长语言</p>
                           
                           <button class="btn waves-effect waves-light regist_btn" id="complete_regist" style="letter-spacing:1px;">完成注册</button>
                           <button class="btn waves-effect waves-light regist_btn cancel_btn" id="cancel_regist">返回</button>
@@ -154,18 +131,18 @@
                     <!-- regist -->
                     
                     <!-- login -->
-                    <div class="login" style="padding:0 60px">
+                    <div class="login">
                     	<div class="row">
-                          <div class="input-field" style="margin-top:45px">
+                          <div class="input-field inputFile">
                             <input placeholder="" id="login_email" type="text" class="validate">
-                            <label for="login_email" class="active" style="left:0">邮箱</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px; display:none">邮箱已被使用</p>
+                            <label for="login_email" class="active">邮箱</label>
+                            <p class="error_p">邮箱已被使用</p>
                           </div>
                           
-                          <div class="input-field" style="margin-top:45px">
+                          <div class="input-field inputFile">
                             <input placeholder="" id="login_password" type="text" class="validate">
-                            <label for="login_password" class="active" style="left:0">密码</label>
-                            <p style="font-size:12px; color:#ee2b2a; margin-top:-5px; display:none">邮箱已被使用</p>
+                            <label for="login_password" class="active">密码</label>
+                            <p class="error_p">邮箱已被使用</p>
                           </div>
                           
                           <button class="btn waves-effect waves-light regist_btn" id="login_btn">登录</button>
@@ -174,25 +151,25 @@
                     </div>
                     <!-- login -->
                     
-                </div>
-                <!-- content -->
+              </div>
+              <!-- content -->
                 
-                <!-- content -->
-                <div class="z-depth-1" id="regist_suc" style=" position:absolute; right:55px; top:35px; width:460px; min-height:445px; background-color:#fff; display:none; padding:0 60px">
+              <!-- Suc -->
+              <div class="z-depth-1 regist_suc" id="regist_suc">
                 	
-                     <div style="margin-top:60px; width:147px; height:147px; margin:60px auto 15px auto">
-                     	<img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" style="width: 147px; height: 147px" class="circle">
+                     <div class="person_cover">
+                      <img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=824176&size=small" data-no-retina class="circle" title="person" alt="person">
                      </div>
-                     <p style="text-align:center; font-size:18px">感觉自己萌萌哒</p>
-                	 <button class="btn waves-effect waves-light regist_btn" id="" style="letter-spacing:1px;">控制面板</button>
+                     <p class="name">感觉自己萌萌哒</p>
+                	   <button class="btn waves-effect waves-light regist_btn" id="" style="letter-spacing:1px;">控制面板</button>
                      <button class="btn waves-effect waves-light regist_btn cancel_btn" id="">注销</button>
                           
-                </div>
+              </div>
+              <!-- Suc -->
                 
                 
             </div>
         </div>
-    </div>
       
   </body>
 
@@ -215,7 +192,7 @@
 	  setLanguage();
 	  $("#mother_language").html(languageList);
 	  $("#first_good_language").html(languageList); 
-      $('select').material_select();
+    $('select').material_select();
 
 
       //图片插件
@@ -270,8 +247,12 @@
 			$("#regist_login").hide();
 			$("#regist_suc").show();
 		});
+    //登陆 
+    $("#login_btn").click(function(){
+      $(this).addClass('disabled');
+    });
 		
-		//
+		// 添加擅长语言
 		$("#add_good_language").click(function(){
 			
 			var append = '<li class="input-field" style="margin-top:45px">'
