@@ -10,6 +10,8 @@ body {height:100%; background-color:#fff; padding-top:65px}
 .login { display:none}
 	
 /*
+	5930 color: #26a69a;
+
 	6265  border-bottom: 1px solid #9e9e9e; 默认
 	6286  border-bottom: 1px solid #26a69a;box-shadow: 0 1px 0 0 #26a69a; 编辑 (0aa89e)
 	6292 border-bottom: 1px solid #4CAF50;box-shadow: 0 1px 0 0 #4CAF50 完成
@@ -23,7 +25,7 @@ body {height:100%; background-color:#fff; padding-top:65px}
 .regist_login_content .ul_login {width:100%; height:62px; border-bottom:1px #e3e3e3 solid}
 .regist_login_content .ul_login li {width:50%; float:left}
 .regist_login_content .ul_login li .tab {width:110px; margin:0 auto; line-height:62px; text-align:center; font-size:18px; color:#96999c; letter-spacing:6px; padding-left:5px;  cursor:pointer}
-.regist_login_content .ul_login li .tab:hover { background-color:#f2f2f3}
+.regist_login_content .ul_login li .tab:hover { background-color: rgba(12,12,12,0.07); color:#20252B}
 .regist_login_content .ul_login li .choose { color:#16998c; border-bottom:2px #16998c solid;  height:61.5px}
 
 .regist {padding:0 60px}
