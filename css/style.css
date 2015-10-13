@@ -14,4 +14,10 @@
 	}
 
 
-	body { min-width: 1180px; height: 100%; background-color: #f9f9f9; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px;}
+	body { min-width: 1180px; height: 100%; background-color: #f9f9f9; font-family: 'Microsoft Yahei', '微软雅黑',Arial, Helvetica, STHeiti,arial,sans-serif;font-size: 14px; color:#313534}
+	
+	.shallow_fonts_color { color:#969c9c}
+	.deep_fonts_color { color:#20252B}
+	.error_fonts { color:#F44336}
+	.ing_fonts {color:#0AA89E}
+	.complete_fonts {color:#4CAF50}
