@@ -39,6 +39,7 @@
         </div>
     </div>
     <!-- 顶部区域 -->
+    
     <div style="height: 100%">
 
       <div class="panel_left">
@@ -46,14 +47,14 @@
 
           <li class="left_sidebar_ul_li">
             <a class="collapsible-header  waves-effect waves-cyan main_title active">
-              <i class="mdi-action-home" style="font-size: 24px; float: left"></i>
+              <i class="mdi-action-home" style="font-size: 24px; float: left; line-height: 48px"></i>
               <p style="position: absolute; left: 60px">One</p>
             <a>
           </li>
 
           <li class="left_sidebar_ul_li" attr-open="close">
             <a class="collapsible-header  waves-effect waves-cyan main_title">
-              <i class="mdi-action-assignment" style="font-size: 24px; float: left"></i>
+              <i class="mdi-action-assignment" style="font-size: 24px; float: left; line-height: 48px"></i>
               <p style="position: absolute; left: 60px">Two</p>
             </a>
             <div class="liExpend unexpend">
@@ -66,7 +67,7 @@
 
           <li class="left_sidebar_ul_li" attr-open="close">
             <a class="collapsible-header  waves-effect waves-cyan main_title" >
-              <i class="mdi-social-person" style="font-size: 24px; float: left"></i>
+              <i class="mdi-social-person" style="font-size: 24px; float: left; line-height: 48px"></i>
               <p style="position: absolute; left: 60px">three</p>
             </a>
             <div class="liExpend unexpend">
@@ -113,10 +114,10 @@
 
       $(".left_sidebar_ul li").delegate("a","click",function(){   
         if(!$(this).hasClass('active')){
-             $(".left_sidebar_ul li").find('a').removeClass("active");
+             // $(".left_sidebar_ul li").find('a').removeClass("active");
              $(".left_sidebar_ul li").find('.liExpend').removeClass('expend').addClass('unexpend');
              $(".left_sidebar_ul li").attr("attr-open","close");
-             $(this).addClass('active');
+             // $(this).addClass('active');
              
              var witch = $(this).parent().attr('attr-open');
              if(witch === null){

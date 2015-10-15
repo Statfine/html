@@ -63,7 +63,7 @@
 .panel_left .left_sidebar_ul {padding: 0}
 .panel_left .left_sidebar_ul li {line-height: 48px;min-height: 48px;color: rgba(255, 255, 255, 0.5);cursor: pointer;
     overflow: hidden;}
-.panel_left .left_sidebar_ul li .main_title {background-color: #39414b;border-bottom: none;color: rgba(255, 255, 255, 0.5);position: relative; overflow: hidden}
+.panel_left .left_sidebar_ul li .main_title {background-color: #39414b;border-bottom: none;color: rgba(255, 255, 255, 0.5);position: relative; overflow: hidden; height: 48px}
 .expend {display: block;}
 .unexpend { display: none}
 .panel_left .left_sidebar_ul li .active {background-color: #2a3139;color: #fff}
