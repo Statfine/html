@@ -21,10 +21,6 @@
   	<!-- ================== END BASE CSS STYLE ================== -->
 
     <link rel="stylesheet" href="../css/easub_panel.css">
-    <style type="text/css">
-		
-    </style>
-    
   </head>
 
 
@@ -45,7 +41,44 @@
     <!-- 顶部区域 -->
     <div style="height: 100%">
 
-      <div class="panel_left"></div>
+      <div class="panel_left">
+        <ul class="left_sidebar_ul">
+
+          <li class="left_sidebar_ul_li">
+            <a class="collapsible-header  waves-effect waves-cyan main_title active">
+              <i class="mdi-action-home" style="font-size: 24px; float: left"></i>
+              <p style="position: absolute; left: 60px">One</p>
+            <a>
+          </li>
+
+          <li class="left_sidebar_ul_li" attr-open="close">
+            <a class="collapsible-header  waves-effect waves-cyan main_title">
+              <i class="mdi-action-assignment" style="font-size: 24px; float: left"></i>
+              <p style="position: absolute; left: 60px">Two</p>
+            </a>
+            <div class="liExpend unexpend">
+              <ul>
+               <li><a href="#">1</a></li>
+               <li><a href="#">2</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="left_sidebar_ul_li" attr-open="close">
+            <a class="collapsible-header  waves-effect waves-cyan main_title" >
+              <i class="mdi-social-person" style="font-size: 24px; float: left"></i>
+              <p style="position: absolute; left: 60px">three</p>
+            </a>
+            <div class="liExpend unexpend">
+              <ul>
+               <li><a href="#">1</a></li>
+               <li><a href="#">2</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
 
       <div class="panel_right">
         <div style="width:100%; height: 100%; background-color: #e3e3e3;">内容区域</div>
@@ -66,61 +99,142 @@
   
   
   <script>
+
+
+
+
+
   
     var flagFouce = false;
     var timerFouce = null;
+    var timerFouceSide = null;
 
     $(document).ready(function(){
+
+      $(".left_sidebar_ul li").delegate("a","click",function(){   
+        if(!$(this).hasClass('active')){
+             $(".left_sidebar_ul li").find('a').removeClass("active");
+             $(".left_sidebar_ul li").find('.liExpend').removeClass('expend').addClass('unexpend');
+             $(".left_sidebar_ul li").attr("attr-open","close");
+             $(this).addClass('active');
+             
+             var witch = $(this).parent().attr('attr-open');
+             if(witch === null){
+                alert(1);
+             }else if(witch === 'open'){
+                $(this).parent().find('.liExpend').removeClass('expend').addClass('unexpend');
+                $(this).parent().attr("attr-open","close");
+             }else{
+                $(this).parent().find('.liExpend').removeClass('unexpend').addClass('expend');
+                $(this).parent().attr("attr-open","open");
+             }
+           }
+      });
+
+
+
+
+
+      // 初始进来判断屏幕设置左边隐藏打开的li
+      if(window.innerWidth < 1180){
+        sideUlOpenHide();
+      }
 	  
+      // 点击事件 首先判断屏幕   屏幕小于1180 （左边展开 显示被选中）    屏幕大于1180 判断左边是缩小还是展开（展开则缩小 隐藏被选中；缩小则展开，显示被选中）
       $(".top_show").click(function(){ 
         console.log(document.body.clientWidth+"  "+window.innerWidth+" ");
 
+        //left_unHover(左侧小屏)  left_hover（左侧大屏）  left_unHover_right（右侧大屏）  left_unHover_right（右侧小屏）
         if(window.innerWidth > 1180){
           if($(".panel_left").innerWidth() == 60){
             $(".panel_left").removeClass('left_unHover').addClass('left_hover');
             $(".panel_right").removeClass('left_unHover_right').addClass('left_hover_right');
+
+            fouceSide();
           }else{
             $(".panel_left").removeClass('left_hover').addClass('left_unHover');
             $(".panel_right").removeClass('left_hover_right').addClass('left_unHover_right');
+
+            sideUlOpenHide();
           }
         }else{
           $(".panel_left").removeClass('left_unHover').addClass('left_hover');
           // $(".panel_right").removeClass('left_unHover_right').addClass('left_hover_right');
           flagFouce = true;
+
+          fouceSide();
         }
 
       }); 
 
-    $(window).resize(function () {          //当浏览器大小变化时
+    // 当浏览器大小变化时 
+    $(window).resize(function () {          
         $(".panel_left").removeClass('left_unHover').removeClass('left_hover');
         $(".panel_right").removeClass('left_hover_right').removeClass('left_unHover_right');
+        if(window.innerWidth < 1180){
+          sideUlOpenHide();
+        }else{
+          fouceSide();
+        }
     });
 
     $('.header_top').mouseenter(function(){
       if(flagFouce){
         $(".panel_left").removeClass('left_unHover').addClass('left_hover');
+
+        fouceSide();
       }
     });
     $('.header_top').mouseleave(function(){
         if(window.innerWidth < 1180){
-        timerFouce = setTimeout(function(){$(".panel_left").removeClass('left_unHover').removeClass('left_hover')},1000);
+        timerFouce = setTimeout(function(){$(".panel_left").removeClass('left_unHover').removeClass('left_hover');},1000);
           flagFouce = false;
+
+        timerFouceSide = setTimeout('sideUlOpenHide()',1000);
         }
     });
     $('.panel_left').mouseenter(function(){
         $(".panel_left").removeClass('left_unHover').addClass('left_hover');
-        if(timerFouce != null){
+        fouceSide();
+        if(timerFouce !== null){
             clearTimeout(timerFouce);
+        }
+        if(timerFouceSide !== null){
+          clearTimeout(timerFouceSide);
         }
     });
     $('.panel_left').mouseleave(function(){
         if(window.innerWidth < 1180){
-          timerFouce = setTimeout(function(){$(".panel_left").removeClass('left_unHover').removeClass('left_hover')},1000);
+          // timerFouce = setTimeout(function(){$(".panel_left").removeClass('left_unHover').removeClass('left_hover');},1000);
+          $(".panel_left").addClass('left_unHover').removeClass('left_hover');
+          sideUlOpenHide();
+        }else if(window.innerWidth > 1180 && $(".panel_right").hasClass('left_unHover_right')){
+          $(".panel_left").addClass('left_unHover').removeClass('left_hover');
+          sideUlOpenHide();
         }
     });
-	  
   	 
   });
+
+function fouceSide(){
+  $('.left_sidebar_ul').find('li').each(function(){
+    if($(this).attr('attr-open') === 'open'){
+      $(this).find(".liExpend").removeClass('unexpend').addClass('expend');
+    }
+  });
+  // if($(".left_sidebar_ul_li").attr('attr-open') == 'open'){
+  //   $(".liExpend").removeClass('unexpend').addClass('expend');
+  // }
+}
+
+function sideUlOpenHide(){
+  $('.left_sidebar_ul li').find('.liExpend').each(function(){
+    if($(this).hasClass('expend')){
+      $(".liExpend").removeClass('expend').addClass('unexpend');
+    }
+  });
+  // $(".liExpend").removeClass('expend').addClass('unexpend');
+}
 
 	
   </script>

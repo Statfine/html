@@ -6,7 +6,7 @@
 	.content_action .tab li {float:left; width:231px; height:60px; line-height:60px; background-color:#ecf0e5; color:#797979; text-align:center; font-size:16px; font-weight:bold; cursor:pointer}
 	.content_action .tab .choose { background-color:#417851; color:#fff}
 
-    .error_login {width:380px; height:36px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000}
+    .error_login {width:380px; height:36px; line-height:36px; margin-top:20px; background-color:#ecf0e5; padding:0 10px; color:#000}
     .regist {display: block}
     .input_text {outline:none; border:1px solid #e3e3e3; width:380px; height:36px; line-height:36px; padding:0 10px}
     .margin-t { margin-top: 22px}
