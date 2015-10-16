@@ -21,6 +21,9 @@
   	<!-- ================== END BASE CSS STYLE ================== -->
 
     <link rel="stylesheet" href="../css/easub_panel.css">
+    
+    <link rel="stylesheet" href="../js/tagsin/jquery.tagsinput.css">
+    
   </head>
 
 
@@ -109,6 +112,7 @@
                   <!-- 输入 -->
                   <div style="min-height: 56px;border-bottom: 1px #e3e3e3 solid; margin-right: 100px; width: 650px">
                     <p style=" font-size: 12px; color: #969c9c">选择感兴趣的视频类型或在输入框中自行添加（多个类型用逗号或回车隔开）</p>
+                    <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" /></p>
                   </div>
                   <!-- 输入 -->
                   
@@ -226,6 +230,9 @@
   <script src="../css/materialize/js/materialize.min.js"></script>
   <script src="../js/respond/respond.js"></script>
   
+  <script src="../js/tagsin/jquery.tagsinput.min.js"></script>
+  <script src="../js/tagsin/jquery-ui.min.js"></script>
+  
   
   <script>
 
@@ -239,6 +246,8 @@
     var timerFouceSide = null;
 
     $(document).ready(function(){
+		
+		$('#tags_1').tagsInput({width:'auto',height:'50px'});
 
       $(".left_sidebar_ul li").delegate("a","click",function(){   
         if(!$(this).hasClass('active')){
