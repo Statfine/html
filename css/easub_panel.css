@@ -1,25 +1,6 @@
-.top_show {
-    font-size: 24px;
-    vertical-align: middle;
-    cursor: pointer;
-    margin-left: 10px
-}
-.panel_left {
-    position: fixed;
-    width: 220px;
-    height: 100%;
-    background-color: #39414b;
-    top: 65px;
-    z-index: 1000;
-    padding-top: 20px
-}
-.panel_right {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 10px 10px 10px 230px;
-    margin-top: 65px;
-    z-index: 999
+.top_show {font-size: 24px;vertical-align: middle;cursor: pointer;margin-left: 20px; color: #00b5a1}
+.panel_left {position: fixed;width: 220px;height: 100%;background-color: #39414b;top: 65px;z-index: 1000;padding-top: 20px}
+.panel_right {position: relative;width: 100%;height: 100%;padding: 0 0 0 220px;margin-top: 65px;z-index: 999
 }
 .left_hover {
     width: 220px !important;
@@ -34,13 +15,13 @@
     transition-timing-function: ease;
 }
 .left_hover_right {
-    padding: 10px 10px 10px 230px !important;
+    padding: 0 0 0 220px !important;
     transition-property: width;
     transition-duration: 0.5s;
     transition-timing-function: ease;
 }
 .left_unHover_right {
-    padding: 10px 10px 10px 70px;
+    padding: 0 0 0 60px;
     transition-property: width;
     transition-duration: 0.5s;
     transition-timing-function: ease;
@@ -54,8 +35,7 @@
         width: 60px;
     }
     .panel_right {
-        color: red;
-        padding: 10px 10px 10px 70px;
+        padding: 0 0 0 60px;
     }
 }
 
@@ -64,6 +44,8 @@
 .panel_left .left_sidebar_ul li {line-height: 48px;min-height: 48px;color: rgba(255, 255, 255, 0.5);cursor: pointer;
     overflow: hidden;}
 .panel_left .left_sidebar_ul li .main_title {background-color: #39414b;border-bottom: none;color: rgba(255, 255, 255, 0.5);position: relative; overflow: hidden; height: 48px}
+.panel_left .left_sidebar_ul li .main_title .left_i {font-size: 24px; float: left; line-height: 48px}
+.panel_left .left_sidebar_ul li .main_title .left_title {position: absolute; left: 60px; line-height: 48px}
 .expend {display: block;}
 .unexpend { display: none}
 .panel_left .left_sidebar_ul li .active {background-color: #2a3139;color: #fff}
@@ -72,7 +54,9 @@
 .panel_left .left_sidebar_ul li .active:hover {background-color: #2a3139;color: #fff}
 
 .panel_left .left_sidebar_ul li .liExpend {padding: 0}
-.panel_left .left_sidebar_ul li .liExpend ul li a {background-color: #39414b;border-bottom: none;color: rgba(255, 255, 255, 0.5); padding-left: 60px}
-.panel_left .left_sidebar_ul li .liExpend ul li:hover a {background-color: #363e47;color: #fff; display: block;}
+.panel_left .left_sidebar_ul li .liExpend ul li {background-color: #39414b;position: relative; overflow: hidden}
+.panel_left .left_sidebar_ul li .liExpend ul li a {border-bottom: none;color: rgba(255, 255, 255, 0.5);display: black; position: absolute; left: 60px}
+.panel_left .left_sidebar_ul li .liExpend ul li:hover {background-color: #363e47;}
+.panel_left .left_sidebar_ul li .liExpend ul li:hover a {color: #fff;}
 .panel_left .left_sidebar_ul li .liExpend ul .active {background-color: #2a3139;color: #fff}
 .panel_left .left_sidebar_ul li .liExpend ul .active:hover a {background-color: #2a3139;color: #fff}
