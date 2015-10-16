@@ -94,123 +94,384 @@
               <i style="position: fixed; right: 10px" class="mdi-content-clear"></i>
             </div>
 
-            <div style=" padding-top: 48px">
             <!-- 完善信息 -->
-            <div style="padding: 0 20px; position: relative" >
+            <div style=" padding-top: 48px">
+            
+              <div style="padding: 0 20px; position: relative" >
 
-              <div class="boxShadow collection" style="background-color: #fff;height:420px;">
+                <div class="boxShadow collection" style="background-color: #fff;height:420px;">
 
-                <!-- 顶部 -->
-                <div style="height: 58px; line-height: 58px; border-bottom: 1px #e3e3e3 solid; font-size: 20px; padding: 0 20px">
-                  选择你感兴趣的视频
-                  <i style=" float: right; cursor: pointer" class="mdi-content-clear"></i>
-                </div>
-                <!-- 顶部 -->
-
-                <div style="padding: 20px">
-                  
-                  <!-- 输入 -->
-                  <div style="min-height: 56px;border-bottom: 1px #e3e3e3 solid; margin-right: 100px; width: 650px">
-                    <p style=" font-size: 12px; color: #969c9c">选择感兴趣的视频类型或在输入框中自行添加（多个类型用逗号或回车隔开）</p>
-                    <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" /></p>
+                  <!-- 顶部 -->
+                  <div style="height: 58px; line-height: 58px; border-bottom: 1px #e3e3e3 solid; font-size: 20px; padding: 0 20px">
+                    选择你感兴趣的视频
+                    <i style=" float: right; cursor: pointer" class="mdi-content-clear"></i>
                   </div>
-                  <!-- 输入 -->
-                  
-                  <!-- 选择 -->
-                  <div style="margin-top: 25px; width: 650px">
+                  <!-- 顶部 -->
 
-                    <!-- 语言 -->
-                    <div class="clearfix" style="min-height: 20px">
-                      
-                      <div style="float: left">
-                        <ul class="clearfix choose_ul">
-                          <p style="font-size: 12px; color: #969c9c; float: left; margin-right: 36px; line-height: 20px">语言</p>
-                          <li style="float: left; width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_1" />
-                                <label for="complete_language_1"  style="font-size: 12px; padding-left: 30px;">中文</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_2" />
-                                <label for="complete_language_2"  style="font-size: 12px; padding-left: 30px;">英语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_3" />
-                                <label for="complete_language_3"  style="font-size: 12px; padding-left: 30px;">粤语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_4" />
-                                <label for="complete_language_4"  style="font-size: 12px; padding-left: 30px;">台语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_5" />
-                                <label for="complete_language_5"  style="font-size: 12px; padding-left: 30px;">韩语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_6" />
-                                <label for="complete_language_6"  style="font-size: 12px; padding-left: 30px;">日语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_7" />
-                                <label for="complete_language_6"  style="font-size: 12px; padding-left: 30px;">日语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_6" />
-                                <label for="complete_language_7"  style="font-size: 12px; padding-left: 30px;">日语</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_language_8" />
-                                <label for="complete_language_8"  style="font-size: 12px; padding-left: 30px;">日语</label>
-                          </li>
-                        </ul>
-                      </div>  
+                  <div style="padding: 20px">
+                    
+                    <!-- 输入 -->
+                    <div style="min-height: 56px;border-bottom: 1px #e3e3e3 solid; margin-right: 100px; width: 650px">
+                      <p style=" font-size: 12px; color: #969c9c">选择感兴趣的视频类型或在输入框中自行添加（多个类型用逗号或回车隔开）</p>
+                      <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" /></p>
                     </div>
-                    <!-- 语言 -->
+                    <!-- 输入 -->
+                    
+                    <!-- 选择 -->
+                    <div style="margin-top: 25px; width: 650px">
 
-                    <!-- 类型 -->
-                    <div class="clearfix" style="min-height: 20px; padding-top: 20px">
-                      <p style="font-size: 12px; color: #969c9c; float: left; margin-right: 36px; line-height: 20px">类型</p>
-                      <div style="float: left">
-                        <ul class="clearfix">
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_1" />
-                                <label for="complete_type_1"  style="font-size: 12px; padding-left: 30px;">电影</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_2" />
-                                <label for="complete_type_2"  style="font-size: 12px; padding-left: 30px;">电视剧</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_3" />
-                                <label for="complete_type_3"  style="font-size: 12px; padding-left: 30px;">动漫</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_4" />
-                                <label for="complete_type_4"  style="font-size: 12px; padding-left: 30px;">纪录片</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_5" />
-                                <label for="complete_type_5"  style="font-size: 12px; padding-left: 30px;">综艺</label>
-                          </li>
-                          <li style="float: left;  width: 90px">
-                                <input type="checkbox" name="complete_language" id="complete_type_6" />
-                                <label for="complete_type_6"  style="font-size: 12px; padding-left: 30px;">知识</label>
-                          </li>
-                        </ul>
+                      <!-- 语言 -->
+                      <div class="clearfix" style="min-height: 20px">
+                        
+                        <div style="float: left">
+                          <ul class="clearfix choose_ul">
+                            <p style="font-size: 12px; color: #969c9c; float: left; margin-right: 36px; line-height: 20px">语言</p>
+                            <li style="float: left; width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_1" />
+                                  <label for="complete_language_1"  style="font-size: 12px; padding-left: 30px;">中文</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_2" />
+                                  <label for="complete_language_2"  style="font-size: 12px; padding-left: 30px;">英语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_3" />
+                                  <label for="complete_language_3"  style="font-size: 12px; padding-left: 30px;">粤语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_4" />
+                                  <label for="complete_language_4"  style="font-size: 12px; padding-left: 30px;">台语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_5" />
+                                  <label for="complete_language_5"  style="font-size: 12px; padding-left: 30px;">韩语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_6" />
+                                  <label for="complete_language_6"  style="font-size: 12px; padding-left: 30px;">日语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_7" />
+                                  <label for="complete_language_6"  style="font-size: 12px; padding-left: 30px;">日语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_6" />
+                                  <label for="complete_language_7"  style="font-size: 12px; padding-left: 30px;">日语</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_language_8" />
+                                  <label for="complete_language_8"  style="font-size: 12px; padding-left: 30px;">日语</label>
+                            </li>
+                          </ul>
+                        </div>  
                       </div>
-                    </div> 
-                    <!-- 类型 --> 
+                      <!-- 语言 -->
+
+                      <!-- 类型 -->
+                      <div class="clearfix" style="min-height: 20px; padding-top: 20px">
+                        <p style="font-size: 12px; color: #969c9c; float: left; margin-right: 36px; line-height: 20px">类型</p>
+                        <div style="float: left">
+                          <ul class="clearfix">
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_1" />
+                                  <label for="complete_type_1"  style="font-size: 12px; padding-left: 30px;">电影</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_2" />
+                                  <label for="complete_type_2"  style="font-size: 12px; padding-left: 30px;">电视剧</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_3" />
+                                  <label for="complete_type_3"  style="font-size: 12px; padding-left: 30px;">动漫</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_4" />
+                                  <label for="complete_type_4"  style="font-size: 12px; padding-left: 30px;">纪录片</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_5" />
+                                  <label for="complete_type_5"  style="font-size: 12px; padding-left: 30px;">综艺</label>
+                            </li>
+                            <li style="float: left;  width: 90px">
+                                  <input type="checkbox" name="complete_language" id="complete_type_6" />
+                                  <label for="complete_type_6"  style="font-size: 12px; padding-left: 30px;">知识</label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div> 
+                      <!-- 类型 --> 
+
+                    </div>
+                    <!-- 选择 -->
 
                   </div>
-                  <!-- 选择 -->
+                </div>
 
+                <p style="position: absolute; right: 60px; bottom: 30px; color: #00b5a1;letter-spacing: 6px; cursor: pointer">保存</p>
+
+              </div>
+            
+            </div>
+            <!-- 完善信息 -->
+
+            
+            <!--  Card -->
+            <div class="row" style="margin-top: 20px; padding-right: 20px">
+        
+              <!--  最近发起的任务 -->
+              <div class="col s6" style=" padding-left: 20px; max-height: 380px">
+                <div class="boxShadow collection"  style="background-color: #fff">
+                  <div style="height: 58px; line-height: 58px; padding: 0 20px; font-size: 20px; border-bottom: 1px #e3e3e3 solid">
+                    <span>最近发起的任务</span>
+                    <i class="mdi-image-crop-free" style="float:right; cursor: pointer"></i>
+                  </div>
+                  <div style="overflow:hidden; position:relative; max-height: 320px" id="initiating_task">
+                    <ul>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <!-- 左侧信息 -->
+                        <div style="width: 70%; float: left; height: 100%; padding-right: 120px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">火影忍者</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">昨天</p>
+                        </div>
+                        <!-- 左侧信息 -->
+                        <!-- 右侧进度 -->
+                        <div style="width: 30%; float: left; height: 100%">
+                          <div class="clearfix">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">爬词</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">25%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 25%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                          <div class="clearfix" style="padding-top: 5px">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">翻译</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">0%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 0%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 右侧进度 -->
+                      </li>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <!-- 左侧信息 -->
+                        <div style="width: 70%; float: left; height: 100%; padding-right: 120px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">昨天</p>
+                        </div>
+                        <!-- 左侧信息 -->
+                        <!-- 右侧进度 -->
+                        <div style="width: 30%; float: left; height: 100%">
+                          <div class="clearfix">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">爬词</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">25%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 25%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                          <div class="clearfix" style="padding-top: 5px">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">翻译</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">0%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 0%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 右侧进度 -->
+                      </li>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <!-- 左侧信息 -->
+                        <div style="width: 70%; float: left; height: 100%; padding-right: 120px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">海贼王</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">昨天</p>
+                        </div>
+                        <!-- 左侧信息 -->
+                        <!-- 右侧进度 -->
+                        <div style="width: 30%; float: left; height: 100%">
+                          <div class="clearfix">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">爬词</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">25%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 25%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                          <div class="clearfix" style="padding-top: 5px">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">翻译</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">0%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 0%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 右侧进度 -->
+                      </li>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <!-- 左侧信息 -->
+                        <div style="width: 70%; float: left; height: 100%; padding-right: 120px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">犬夜叉</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">昨天</p>
+                        </div>
+                        <!-- 左侧信息 -->
+                        <!-- 右侧进度 -->
+                        <div style="width: 30%; float: left; height: 100%">
+                          <div class="clearfix">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">爬词</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">25%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 25%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                          <div class="clearfix" style="padding-top: 5px">
+                            <div class="deep_fonts_color" style="float:left; width: 25%; font-size: 12px">翻译</div>
+                            <div class="shallow_fonts_color" style="float:left; width: 35%; font-size: 12px; text-align: right; padding-right: 10px">0%</div>
+                            <div style="float:left; width: 40%; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 0%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 右侧进度 -->
+                      </li>
+
+                    </ul>
+                  </div>
                 </div>
               </div>
+              <!--  最近发起的任务 -->
 
-              <p style="position: absolute; right: 60px; bottom: 30px; color: #00b5a1;letter-spacing: 6px; cursor: pointer">保存</p>
+
+              <!--  最近参与任务 -->
+              <div class="col s6" style=" padding-left: 20px; max-height: 380px">
+                <div class="boxShadow collection"  style="background-color: #fff">
+                  <div style="height: 58px; line-height: 58px; padding: 0 20px; font-size: 20px; border-bottom: 1px #e3e3e3 solid">
+                    <span>最近参与任务</span>
+                    <i class="mdi-image-crop-free" style="float:right; cursor: pointer"></i>
+                  </div>
+                  <div style="overflow:hidden; position:relative; max-height: 320px" id="join_task">
+                    <ul>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <div style="width: 10%; height: 100%; float: left;">
+                          <i style=" font-size: 40px" class="mdi-av-closed-caption"></i>
+                        </div>
+                        <div style="width: 42%; height: 100%; float: left;padding: 0 50px 0 10px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">海贼王</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">发起时间：2015-01-01</p>
+                        </div>
+                        <div style="width: 48%; height: 100%; float: left;">
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px;letter-spacing: 4.8px;">原语言:</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Japanese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">目标语言 :</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Chinese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">任务进度 :</div>
+                            <div style="width: 73%; float: left; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 10%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <div style="width: 10%; height: 100%; float: left;">
+                          <i style=" font-size: 40px" class="mdi-action-translate"></i>
+                        </div>
+                        <div style="width: 42%; height: 100%; float: left;padding: 0 50px 0 10px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">发起时间：2015-01-01</p>
+                        </div>
+                        <div style="width: 48%; height: 100%; float: left;">
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px;letter-spacing: 4.8px;">原语言:</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Japanese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">目标语言 :</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Chinese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">任务进度 :</div>
+                            <div style="width: 73%; float: left; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 10%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="clearfix" style="height: 102px; border-bottom: 1px #e3e3e3 solid; padding: 20px">
+                        <div style="width: 10%; height: 100%; float: left;">
+                          <i style=" font-size: 40px" class="mdi-action-spellcheck"></i>
+                        </div>
+                        <div style="width: 42%; height: 100%; float: left;padding: 0 50px 0 10px">
+                          <p class="deep_fonts_color" style=" font-size: 12px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+          -webkit-line-clamp: 2;-webkit-box-orient: vertical;">火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞火影忍者鸣人佐助小樱雏田卡卡西阿飞我来罗自来也猿飞</p>
+                          <p class="shallow_fonts_color" style=" font-size: 12px; margin-top: 5px">发起时间：2015-01-01</p>
+                        </div>
+                        <div style="width: 48%; height: 100%; float: left;">
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px;letter-spacing: 4.8px;">原语言:</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Japanese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">目标语言 :</div>
+                            <div style="width: 73%; float: left; font-size: 12px">
+                              Chinese
+                            </div>
+                          </div>
+                          <div class="clearfix">
+                            <div style="width: 27%; float: left; font-size: 12px">任务进度 :</div>
+                            <div style="width: 73%; float: left; position: relative">
+                              <div style="width: 100%; height: 6px; background-color: #ebebeb; margin-top: 6px"></div>
+                              <div style="position: absolute; width: 10%; height: 6px; background-color: #00b5a1; top: 6px"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--  最近参与任务 -->
+
+              
 
             </div>
-            <!-- 完善信息 -->
-            </div>
+            <!--  Card -->
+
           
           </div>
                
