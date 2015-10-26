@@ -355,6 +355,8 @@
     
     </div>
       
+      <input type="text" class="input_share_content" id="input_share" placeholder="最多25个字符">
+      
   </body>
 
 
@@ -386,6 +388,10 @@ var languageVal = "ab;aa;af;aka;sq;arq;ase;amh;ar;an;arc;hy;as;ast;av;ae;ay;az;b
 	  var textList = languageList.split(';');
 	  var valList = languageVal.split(';');
 	  console.log(textList.length+""+ valList.length);
+	  
+	  $('#input_share').bind('input propertychange', function() {  
+		  console.log('propertychange')
+		});
 
     });
 
