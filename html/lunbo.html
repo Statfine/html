@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js" style="height: 100%"> <!--<![endif]-->
+  
+  <head>
+  	<meta charset="utf-8">
+    <meta name="Description" content="description">
+    <title>登录</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+      
+
+    <style type="text/css">
+      ul li {list-style-type: none;padding: 0; margin: 0}
+
+      .slidebox {width: 100%; background-color: #999; min-height: 10%; overflow: hidden;}
+      .slidebox_ul {height: 100%; width: 100%; position: relative; overflow: hidden; padding: 0; margin: 0}
+      .slidebox_ul li {width: 100%; height: 100%; position: absolute; top: 0; left: 100%; z-index:1; overflow: hidden;}
+      .slidebox_ul li img {width: 100%; height: 100%}
+      .slidebox_ul  li:first-child{left: 0;}
+    </style>
+  </head>
+
+
+
+  <body style="padding: 0; margin: 0">
+    
+    <div class="slidebox">
+      <ul class="slidebox_ul" id＝"slidebox_">
+        <li>
+          <img src="http://image1.eastiming.com/a24q5e6CypSU74Xk/201510/c6fc3857-52bf-4f33-a09d-2dce11dab284.png">
+        </li>
+        <li >
+          <img src="http://img1.cache.netease.com/cnews/2015/9/25/20150925154732b9e86.jpg">
+        </li>
+        <li >
+          <img src="http://img6.cache.netease.com/video/2015/8/25/201508251103059a2f1.jpg">
+        </li>
+        <li >
+          <img src="http://img1.cache.netease.com/video/2015/7/28/20150728135036239ea.jpg">
+        </li>
+        
+      </ul>
+    </div>
+	  
+      
+  </body>
+
+
+
+  <script src="../js/jquery-1.11.0.min.js"></script>
+  <script src="../js/retina.min.js"></script>
+  
+  <script>
+
+    var  toatle = 0;
+    var a = 0;
+    var timeInteval = '';
+
+    $(document).ready(function(){
+
+
+      var height = document.body.offsetWidth/1.8;
+
+      $(".slidebox").css({height:"200px"});
+
+      toatle = $(".slidebox li").length;
+
+      // timeInteval = setInterval(showL,"5000");
+
+      function load (){
+ 
+          document.addEventListener('touchstart',touch, false);
+          document.addEventListener('touchmove',touch, false);
+          document.addEventListener('touchend',touch, false);
+           
+          var startX = 0;
+          var moveX = 0;
+
+          function touch (event){
+              var event = event || window.event;
+               
+              var oInp = document.getElementById("slidebox_");
+
+              
+       
+              switch(event.type){
+                  case "touchstart":
+                      if(timeInteval !== ''){
+                        clearInterval(timeInteval);
+                        timeInteval = '';
+                      }
+                      console.log("Touch started (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")");
+                      startX = event.touches[0].clientX
+                      break;
+                  case "touchend":
+                      
+
+                      console.log("Touch end (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")"+"===>"+moveX);
+
+                      break;
+                  case "touchmove":
+                      event.preventDefault();
+
+                      console.log("1Touch moved"+startX )
+
+                      moveX = moveX + (startX - event.touches[0].clientX);
+                      startX = event.touches[0].clientX;
+
+                      $("ul li").eq(a).css('left',moveX+'px');
+                      $("ul li").eq(a+1).css('left',-moveX+'px');
+
+                      console.log("2Touch moved (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")"+"===>"+moveX);
+                      break;
+              }
+               
+          }
+      }
+
+      window.addEventListener('load',load, false);
+
+
+    });
+
+    
+    function showL(){
+
+      console.log('上一次a:'+a);
+
+      $('.slidebox_ul').find('li').each(function (){
+        if($(this).index() === a){
+          $("ul li").eq(a).stop().animate({ left:-document.body.offsetWidth+'px'},2000,function(){
+                   $(this).css("left","100%");
+          });
+          if(a === (toatle-1)){
+            a = -1;
+          }
+            
+          $("ul li").eq(a+1).stop().animate({ left:0+'px'},2000);
+        }
+      });
+
+      a++;
+
+    }
+
+
+
+
+  </script>
+
+</html>
+
+
