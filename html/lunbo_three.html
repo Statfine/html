@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<title>循环轮播图插件-web前端开发(www.css119.com)-关注常见的前端开发问题、最新的前端开发技术(前端移动开发)和最好的前端开发工具</title>
+<style type="text/css">
+/*base*/
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+body{font:400 12px/1.5 \5b8b\4f53,Arial,Helvetica,sans-serif}
+h1,h2,h3,h4,h5,h6,i{font-weight:400;font-style:normal}
+select,input,img,th{vertical-align:middle}
+img{border:none}
+ul,ol,li,dl,dt,dd{list-style-type:none}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus,input[type="button"]:focus,input[type="submit"]:focus,button,textarea:focus{outline:none}
+
+.box{
+width : 100%;
+height : 10%;
+overflow : hidden;
+background-color:#666;
+}
+.imgBox a img{
+width : 100%;
+height: 100%;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="box">
+    <div class="imgBox" style="display:none">
+        <a href="javascript:void(0)"><img alt="1" title="1" src="http://image1.eastiming.com/a24q5e6CypSU74Xk/201510/c6fc3857-52bf-4f33-a09d-2dce11dab284.png"/></a>
+        <a href="javascript:void(0)"><img alt="2" title="2" src="http://img1.cache.netease.com/cnews/2015/9/25/20150925154732b9e86.jpg"/></a>
+        <a href="javascript:void(0)"><img alt="3" title="3" src="http://img6.cache.netease.com/video/2015/8/25/201508251103059a2f1.jpg"/></a>
+        <a href="javascript:void(0)"><img alt="4" title="4"src="http://img1.cache.netease.com/video/2015/7/28/20150728135036239ea.jpg"/></a>	
+    </div>	
+</div>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/touchSlid.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+		
+			var height = document.body.offsetWidth/1.8;
+			$(".box").css({height:height+'px'});
+			$(".box").find('img').css({width:document.body.offsetWidth+"px",height:height+"px"});
+			
+			var ts = $(".box").touchSlider({
+				container: this,
+				duration: 350,
+				delay: 3000,
+				//namespace: "touchslider",
+				margin: 5,
+				//next: ".touchslider-next", 
+				pagination: ".off",
+				currentClass: "on", 
+				//prev: ".touchslider-prev", 
+				mouseTouch: true,
+				viewport: ".imgBox",
+				scroller: $(".imgBox").children(),
+				autoplay: true 
+			});
+			
+			$(".imgBox").show();
+			
+	});
+
+</script>
+</body>
+</html>
